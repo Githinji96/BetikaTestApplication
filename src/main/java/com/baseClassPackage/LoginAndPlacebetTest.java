@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.time.Duration;
+import java.util.List;
 
 public class LoginAndPlacebetTest {
     WebDriver driver;
@@ -72,10 +73,9 @@ public class LoginAndPlacebetTest {
         driver = null;
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void visitUrl() {
         driver.get(URL);
-        driver.manage().window().maximize();
     }
 
     // validate the login page
@@ -87,12 +87,11 @@ public class LoginAndPlacebetTest {
     }
 
     // login
+
     @Test
-    public void login() throws InterruptedException {
-        Thread.sleep(3000);
+    public void login(){
         phoneNumber.sendKeys("0743551248");
         password.sendKeys("1234");
-        js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", loginBtn);
 
         //Assert user successful login by viewing my bet page
@@ -101,17 +100,17 @@ public class LoginAndPlacebetTest {
         boolean isElementEnabled = element.isEnabled();
 
         Assert.assertTrue(isElementDisplayed && isElementEnabled, "Login was not successful. Element is not displayed or enabled.");
-        profile.click();
+     //   profile.click();
 
     }
+    @Test
+    public void logOut(){
 
+    }
     // place a football match bet for upcoming games
     @Test
     public void placebet() {
-        phoneNumber.sendKeys("0743551248");
-        password.sendKeys("1234");
-        js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", loginBtn);
+        login();
         upcomingbtn.click();
         //select day
         weekbtn.click();
