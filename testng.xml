@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest">
+        <classes>
+            <class name="com.baseClassPackage.LoginAndPlacebetTest">
+                <methods>
+                    <include name="verifyLoginTitleTest"/>
+                    <include name="login"/>
+                    <include name="placebet"/>
+                </methods>
+            </class>
+            <class name="com.baseClassPackage.RegisterNewUser">
+                <methods>
+                    <include name="registeruser"/>
+                </methods>
+            </class>
+            <class name="com.baseClassPackage.SelectMultiplebets">
+                <methods>
+                    <include name="placeBets"/>
+                </methods>
+            </class>
+            <class name="com.baseClassPackage.TestBrokenLinks">
+                <methods>
+                    <include name="testBrokenLinks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
