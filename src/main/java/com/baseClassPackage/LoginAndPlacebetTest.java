@@ -103,10 +103,6 @@ public class LoginAndPlacebetTest {
      //   profile.click();
 
     }
-    @Test
-    public void logOut(){
-
-    }
     // place a football match bet for upcoming games
     @Test
     public void placebet() {
@@ -126,7 +122,7 @@ public class LoginAndPlacebetTest {
 
         clickwin.click();
         enterAmount.clear();
-        enterAmount.sendKeys("55");
+        enterAmount.sendKeys("3");
         js.executeScript("arguments[0].click()", submit);
         //notification-show success > title
         WebElement toast = driver.findElement(
