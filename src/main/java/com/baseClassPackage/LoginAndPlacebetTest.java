@@ -15,6 +15,7 @@ public class LoginAndPlacebetTest {
     WebDriver driver;
     JavascriptExecutor js;
     public String URL = "https://www.betika.com/en-ke/login";
+    String defaultBrowser = "chrome";
 
     // page factory
     //phone number login locator
@@ -60,17 +61,16 @@ public class LoginAndPlacebetTest {
     // Class constructor
     public LoginAndPlacebetTest() {
         // initializing the pageObjects
-        DriverClass driverClass = new DriverClass("chrome");
+        DriverClass driverClass = new DriverClass("firefox");
         driver = driverClass.driver;
         js = driverClass.js;
-        String browser = "chrome";
         PageFactory.initElements(driver, this);
     }
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
-        driver = null;
+     driver.quit();
+     driver = null;
     }
 
     @BeforeMethod
@@ -81,7 +81,7 @@ public class LoginAndPlacebetTest {
     // validate the login page
 
     @Test
-    public void verifyLoginTitleTest() {
+    public void verifyTitleTest() {
         String title = driver.getTitle();
         Assert.assertEquals(title, "Betika | Best Online Sports Betting in Kenya");
     }
@@ -111,6 +111,7 @@ public class LoginAndPlacebetTest {
         //select day
         weekbtn.click();
         saturday.click();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(highlight));
         highlight.click();
         apply.click();
 
@@ -121,6 +122,7 @@ public class LoginAndPlacebetTest {
         Assert.assertTrue(isElementDisplayed && isElementEnabled, "Game day not found");
 
         clickwin.click();
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(enterAmount));
         enterAmount.clear();
         enterAmount.sendKeys("3");
         js.executeScript("arguments[0].click()", submit);
@@ -129,6 +131,6 @@ public class LoginAndPlacebetTest {
                 By.xpath("//div[contains(@class, 'notification') and contains(@class, 'show') and contains(@class, 'success')]//div[@class='title']"));
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(toast));
         Assert.assertTrue(toast.getText().contains("Bet Placement Successful"));
-
+      //  Assert.assertTrue(toast.getText().matches("/[A-Z]\\w+/"));
     }
 }

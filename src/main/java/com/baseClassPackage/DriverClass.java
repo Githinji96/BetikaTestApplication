@@ -27,7 +27,7 @@ public class DriverClass {
 		setup();
 	}
 
-	// default browser-no-config
+	// default browser-no-con fig
 	public DriverClass() {
 		this.browser = "chrome";
 		setup();

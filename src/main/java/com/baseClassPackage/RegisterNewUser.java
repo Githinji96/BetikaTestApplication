@@ -38,7 +38,7 @@ public class RegisterNewUser {
     WebElement submitBtn;
 
     public RegisterNewUser() {
-        String browser = "chrome";
+        String browser = "firefox";
         DriverClass driverClass = new DriverClass(browser);
         driver = driverClass.driver;
         js = driverClass.js;
@@ -61,12 +61,13 @@ public class RegisterNewUser {
     @Test
     public void registeruser() {
         register.click();
-        phonenumber.sendKeys("0725200738");
+        phonenumber.sendKeys("07250000");
         passwordFields.forEach(password -> {
             password.sendKeys("password1234test@" + Keys.ENTER);
         });
         js.executeScript("arguments[0].click()", acceptTerms);
         js.executeScript("arguments[0].click()", submitBtn);
+
     }
 
 }

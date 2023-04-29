@@ -26,17 +26,8 @@ public class SelectMultiplebets {
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
     WebElement submit;
 
-    @FindBy(className = "prebet-match__markets")
-    WebElement clickmarket;
-
     @FindAll(@FindBy(className = "prebet-match__odds"))
     List<WebElement> teams;
-
-    @FindBy(className = "odd__value")
-    WebElement clickwin;
-
-    @FindBy(className = "prebet-match__odd")
-    WebElement winbtn;
 
     public SelectMultiplebets() {
         String browser = "chrome";
