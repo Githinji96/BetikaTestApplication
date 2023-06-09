@@ -29,7 +29,6 @@ public class TestBrokenLinks {
 		// initializing the pageObjects
 		DriverClass driverClass = new DriverClass("chrome");
 		driver = driverClass.driver;
-		js = driverClass.js;
 		String browser = "chrome";
 		PageFactory.initElements(driver, this);
 

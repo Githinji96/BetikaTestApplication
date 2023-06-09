@@ -1,9 +1,5 @@
 package com.baseClassPackage;
 
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class SelectMultiplebets {
     WebDriver driver;
@@ -44,15 +41,16 @@ public class SelectMultiplebets {
     }
 
     @Test
-    public void placeBets(){
+    public void placeBets() {
         // Home, draw or away buttons
         List<WebElement> odds;
         // Randomly choose team and place 4 bets
-        for (int i = 0; i <= 4; i++) {
+        for (int i = 0; i < 4; i++) {
             int randomTeam = (int) Math.floor(Math.random() * teams.size());
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
             int randId = (int) Math.floor(Math.random() * odds.size());
             js.executeScript("arguments[0].click()", odds.get(randId));
+            System.out.println(randId);
         }
         // Submit the bets
         js.executeScript("arguments[0].click()", submit);

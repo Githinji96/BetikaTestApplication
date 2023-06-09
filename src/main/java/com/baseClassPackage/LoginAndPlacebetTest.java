@@ -1,6 +1,7 @@
 package com.baseClassPackage;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +16,6 @@ public class LoginAndPlacebetTest {
     WebDriver driver;
     JavascriptExecutor js;
     public String URL = "https://www.betika.com/en-ke/login";
-    String defaultBrowser = "chrome";
 
     // page factory
     //phone number login locator
@@ -57,11 +57,10 @@ public class LoginAndPlacebetTest {
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
     WebElement submit;
 
-
     // Class constructor
     public LoginAndPlacebetTest() {
         // initializing the pageObjects
-        DriverClass driverClass = new DriverClass("firefox");
+        DriverClass driverClass = new DriverClass("chrome");
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);
@@ -100,7 +99,6 @@ public class LoginAndPlacebetTest {
         boolean isElementEnabled = element.isEnabled();
 
         Assert.assertTrue(isElementDisplayed && isElementEnabled, "Login was not successful. Element is not displayed or enabled.");
-     //   profile.click();
 
     }
     // place a football match bet for upcoming games
@@ -131,6 +129,7 @@ public class LoginAndPlacebetTest {
                 By.xpath("//div[contains(@class, 'notification') and contains(@class, 'show') and contains(@class, 'success')]//div[@class='title']"));
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(toast));
         Assert.assertTrue(toast.getText().contains("Bet Placement Successful"));
-      //  Assert.assertTrue(toast.getText().matches("/[A-Z]\\w+/"));
+
     }
+
 }

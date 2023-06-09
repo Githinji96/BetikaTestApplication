@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
@@ -37,6 +38,7 @@ public class RegisterNewUser {
     @FindBy(xpath = "//button[contains(@class, 'button') and contains(@class, 'account__payments__submit') and contains(@class, 'session__form__button') and contains(@class, 'login') and contains(@class, 'button') and contains(@class, 'button__secondary')]")
     WebElement submitBtn;
 
+
     public RegisterNewUser() {
         String browser = "firefox";
         DriverClass driverClass = new DriverClass(browser);
@@ -61,7 +63,7 @@ public class RegisterNewUser {
     @Test
     public void registeruser() {
         register.click();
-        phonenumber.sendKeys("07250000");
+        phonenumber.sendKeys("0711198013");
         passwordFields.forEach(password -> {
             password.sendKeys("password1234test@" + Keys.ENTER);
         });
