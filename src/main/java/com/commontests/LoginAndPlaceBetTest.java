@@ -1,18 +1,23 @@
-package com.baseClassPackage;
+package com.commontests;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.FindAll;
+import com.loginpackage.AppLogin;
+import com.utils.DriverClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-public class LoginAndPlacebetTest {
+public class SomeClass {
     WebDriver driver;
     JavascriptExecutor js;
     public String URL = "https://www.betika.com/en-ke/login";
@@ -50,15 +55,16 @@ public class LoginAndPlacebetTest {
 
     @FindBy(className = "prebet-match__odd")
     WebElement clickwin;
+
     //Amount placeholder
-    @FindBy(xpath = "//input[@placeholder='Enters stake']")
-    WebElement enterAmount;
+    @FindBy(xpath = "//input[@placeholder='Enter stake']")
+    WebElement enterAmt;
     //placebet button
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
     WebElement submit;
 
     // Class constructor
-    public LoginAndPlacebetTest() {
+    public SomeClass() {
         // initializing the pageObjects
         DriverClass driverClass = new DriverClass("chrome");
         driver = driverClass.driver;
@@ -66,45 +72,23 @@ public class LoginAndPlacebetTest {
         PageFactory.initElements(driver, this);
     }
 
-    @AfterTest
-    public void tearDown() {
-     driver.quit();
-     driver = null;
-    }
-
-    @BeforeMethod
-    public void visitUrl() {
-        driver.get(URL);
-    }
-
-    // validate the login page
-
     @Test
-    public void verifyTitleTest() {
+    public void placebet() {
+        AppLogin lg = new AppLogin();
+
+        lg.login(URL, "0711198013", "Bg33173375", new ArrayList<>(Arrays.asList(driver, js)));
         String title = driver.getTitle();
         Assert.assertEquals(title, "Betika | Best Online Sports Betting in Kenya");
-    }
-
-    // login
-
-    @Test
-    public void login(){
-        phoneNumber.sendKeys("0743551248");
-        password.sendKeys("1234");
-        js.executeScript("arguments[0].click();", loginBtn);
-
         //Assert user successful login by viewing my bet page
         WebElement element = driver.findElement(By.xpath("//span[normalize-space()='My Bets']"));
         boolean isElementDisplayed = element.isDisplayed();
-        boolean isElementEnabled = element.isEnabled();
+        boolean isElementEnabled = element.isDisplayed();
 
-        Assert.assertTrue(isElementDisplayed && isElementEnabled, "Login was not successful. Element is not displayed or enabled.");
-
-    }
-    // place a football match bet for upcoming games
-    @Test
-    public void placebet() {
-        login();
+        if (isElementDisplayed && isElementEnabled) {
+            System.out.println("Element is visible");
+        } else {
+            System.out.println("Eelement is not displayed");
+        }
         upcomingbtn.click();
         //select day
         weekbtn.click();
@@ -113,16 +97,16 @@ public class LoginAndPlacebetTest {
         highlight.click();
         apply.click();
 
-        WebElement element = driver.findElement(By.xpath("//div[@class='selected-filters__item']"));
-        boolean isElementDisplayed = element.isDisplayed();
-        boolean isElementEnabled = element.isEnabled();
+        WebElement elem = driver.findElement(By.xpath("//div[@class='selected-filters__item']"));
+        boolean isElement_Displayed = elem.isDisplayed();
+        boolean isElement_Enabled = elem.isEnabled();
 
-        Assert.assertTrue(isElementDisplayed && isElementEnabled, "Game day not found");
+        Assert.assertTrue(isElement_Displayed && isElement_Enabled, "Game day not found");
 
         clickwin.click();
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(enterAmount));
-        enterAmount.clear();
-        enterAmount.sendKeys("3");
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(enterAmt));
+        enterAmt.click();
+        enterAmt.sendKeys("10");
         js.executeScript("arguments[0].click()", submit);
         //notification-show success > title
         WebElement toast = driver.findElement(
@@ -131,5 +115,6 @@ public class LoginAndPlacebetTest {
         Assert.assertTrue(toast.getText().contains("Bet Placement Successful"));
 
     }
+
 
 }

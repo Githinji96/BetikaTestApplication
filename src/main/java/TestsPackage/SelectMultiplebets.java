@@ -1,4 +1,4 @@
-package com.baseClassPackage;
+package baseClassPackage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -43,22 +43,23 @@ public class SelectMultiplebets {
     @Test
     public void placeBets() {
         // Home, draw or away buttons
-        List<WebElement> odds;
-        // Randomly choose team and place 4 bets
-        for (int i = 0; i < 4; i++) {
+        List<WebElement> odds=null;
+        // Randomly choose team and place  bets
+        for (int i = 0; i < 20; i++) {
             int randomTeam = (int) Math.floor(Math.random() * teams.size());
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
             int randId = (int) Math.floor(Math.random() * odds.size());
             js.executeScript("arguments[0].click()", odds.get(randId));
-            System.out.println(randId);
+           // System.out.println(randId);
         }
+        System.out.println(odds.size());
+        System.out.println(teams.size());
         // Submit the bets
-        js.executeScript("arguments[0].click()", submit);
+      //  js.executeScript("arguments[0].click()", submit);
     }
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
-        driver = null;
+
     }
 }

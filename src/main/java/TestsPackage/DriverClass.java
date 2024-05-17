@@ -1,4 +1,4 @@
-package com.baseClassPackage;
+package baseClassPackage;
 
 
 import java.time.Duration;

@@ -1,4 +1,4 @@
-package com.baseClassPackage;
+package baseClassPackage;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
