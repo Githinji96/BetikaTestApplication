@@ -9,12 +9,12 @@
                     <include name="placebet"/>
                 </methods>
             </class>
-            <class name="com.commontests.RegisterNewUser">
+            <class name="com.commontests.RegisterUser">
                 <methods>
                     <include name="registeruser"/>
                 </methods>
             </class>
-            <class name="com.commontests.SelectMultiplebets">
+            <class name="com.commontests.SelectMultipleSoccerbets">
                 <methods>
                     <include name="placeBets"/>
                 </methods>

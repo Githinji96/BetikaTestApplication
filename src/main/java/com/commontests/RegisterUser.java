@@ -43,8 +43,8 @@ public class RegisterUser {
     private final DriverClass driverClass;
 
     public RegisterUser() {
-        String browser = "chrome";
-        this.driverClass = new DriverClass(browser);
+
+        this.driverClass = new DriverClass();
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);

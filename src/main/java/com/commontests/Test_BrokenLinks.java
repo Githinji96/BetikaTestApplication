@@ -72,7 +72,7 @@ public class Test_BrokenLinks {
                 huc.setRequestMethod("HEAD");
 
                 huc.connect();
-                if (respCode >= 400) {
+                if (respCode >400) {
                     System.out.println(url + " is a broken link");
                 } else {
                     System.out.println(url + " is a valid link");
