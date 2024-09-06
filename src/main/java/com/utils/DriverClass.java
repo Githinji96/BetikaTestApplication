@@ -1,19 +1,19 @@
 package com.utils;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -59,5 +59,12 @@ public class DriverClass {
     }
     public void customWait(WebDriver dr,Integer duration, WebElement element){
         new WebDriverWait(dr, Duration.ofSeconds(duration)).until(ExpectedConditions.visibilityOf(element));
+    }
+    public void takeScreenshot(String fileName) throws IOException {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+	File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+	File destFile = new File("./screenshots/"+fileName);
+	FileUtils.copyFile(sourceFile, destFile);
+	System.out.println("Screenshot saved successfully");
     }
 }

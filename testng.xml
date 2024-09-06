@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.ListenersPackage.Listeners"/>
+        </listeners>
+
     <test verbose="2" preserve-order="true"
           name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication">
         <classes>
             <class name="com.commontests.LoginAndPlaceBetTest">
                 <methods>
-                    <include name="placebet"/>
+                   <include name="placebet"/>
                 </methods>
             </class>
             <class name="com.commontests.RegisterUser">
@@ -17,6 +21,21 @@
             <class name="com.commontests.SelectMultipleSoccerbets">
                 <methods>
                     <include name="placeBets"/>
+                </methods>
+            </class>
+            <class name="com.commontests.Test_BrokenLinks">
+                <methods>
+                    <include name="testBrokenLinks"/>
+                </methods>
+            </class>
+            <class name="com.commontests.Test_BoxingMatches">
+                <methods>
+                    <include name=" PlacementBoxingMatches"/>
+                </methods>
+            </class>
+            <class name="com.commontests.Test_Notifications">
+                <methods>
+                    <include name="notifications_Test"/>
                 </methods>
             </class>
             <class name="com.commontests.Test_BrokenLinks">

@@ -1,5 +1,7 @@
 package com.commontests;
 
+import com.PropertyData.loadProperty;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,7 +22,7 @@ import java.util.List;
 
 public class Test_BrokenLinks {
 
-    private static final String URL = "https://www.betika.com/en-ke/";
+    public String betUrl;
     String browser = "chrome";
     WebDriver driver;
     private DriverClass driverClass;
@@ -34,8 +36,11 @@ public class Test_BrokenLinks {
 
     }
     @BeforeTest
-    public void launchUrl(){
-        driver.get(URL);
+    public void launchUrl() throws IOException {
+        loadProperty ld= new loadProperty();
+        ld.loadProperties();
+        this.betUrl=ld.betUrl;
+        driver.get(betUrl);
     }
 
     @AfterTest
@@ -44,47 +49,49 @@ public class Test_BrokenLinks {
         driver = null;
     }
 
-    @Test
+    @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void testBrokenLinks() {
-        String url = "";
-        HttpURLConnection huc = null;
-        int respCode = 200;
-        List<WebElement> links = driver.findElements(By.tagName("a"));
 
-        Iterator<WebElement> it = links.iterator();
+            String url = "";
+            HttpURLConnection huc = null;
+            int respCode = 200;
+            List<WebElement> links = driver.findElements(By.tagName("a"));
 
-        while (it.hasNext()) {
+            Iterator<WebElement> it = links.iterator();
 
-            url = it.next().getAttribute("href");
-            System.out.println(url);
-            if (url == null || url.isEmpty()) {
-                System.out.println("URL is either not configured for anchor tag or it is empty");
-                continue;
-            }
+            while (it.hasNext()) {
 
-            if (!url.startsWith(URL)) {
-                System.out.println("URL belongs to another domain, skipping it.");
-                continue;
-            }
-            try {
-                huc = (HttpURLConnection) (new URL(url).openConnection());
-
-                huc.setRequestMethod("HEAD");
-
-                huc.connect();
-                if (respCode >400) {
-                    System.out.println(url + " is a broken link");
-                } else {
-                    System.out.println(url + " is a valid link");
+                url = it.next().getAttribute("href");
+                System.out.println(url);
+                if (url == null || url.isEmpty()) {
+                    System.out.println("URL is either not configured for anchor tag or it is empty");
+                    continue;
                 }
 
-            } catch (MalformedURLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                if (!url.startsWith(betUrl)) {
+                    System.out.println("URL belongs to another domain, skipping it.");
+                    continue;
+                }
+                try {
+                    huc = (HttpURLConnection) (new URL(url).openConnection());
+
+                    huc.setRequestMethod("HEAD");
+
+                    huc.connect();
+                    if (respCode > 400) {
+                        System.out.println(url + " is a broken link");
+                    } else {
+                        System.out.println(url + " is a valid link");
+                    }
+
+                } catch (MalformedURLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         }
     }
-}
+

@@ -1,4 +1,6 @@
 package com.commontests;
+import com.PropertyData.loadProperty;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
 import org.openqa.selenium.By;
@@ -12,6 +14,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,8 +24,10 @@ public class TestTableTennis {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
-    public String URL = "https://www.betika.com/en-ke/login";
 
+    public String URL;
+    public String usernumber;
+    public String password;
 
     @FindBy(xpath = "//span[normalize-space()='Table Tennis']")
     WebElement tennisbtn;
@@ -37,6 +42,8 @@ public class TestTableTennis {
     @FindBy(className = "modal__container")
     WebElement modalContainer;
 
+    @FindBy(className = "modal__x")
+     WebElement cancelModal;
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
     WebElement submit;
 
@@ -56,11 +63,22 @@ public class TestTableTennis {
 
     @BeforeMethod
     private void login() {
+        loadProperty ld= new loadProperty();
+        try {
+            ld.loadProperties();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        // Assign the loaded properties to the local instance variables
+        this.URL = ld.URL;
+        this.usernumber = ld.usernumber;
+        this.password = ld.password;
+
         AppLogin lg = new AppLogin();
-        lg.login(URL, "0711198013", "Bg33173375", new ArrayList<>(Arrays.asList(driver, js)));
+        lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
 
-    @Test
+    @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void PlacetestBoxingMatches() {
         tennisbtn.click();
 
@@ -85,20 +103,9 @@ public class TestTableTennis {
         //display modal container when insufficient amount is placed.
         Assert.assertTrue(modalContainer.isDisplayed(), "The modal container is not displayed on the page.");
 
+        //cancel the modal after its launched.
+        cancelModal.click();
+
     }
-    @Test
-    public void RandomlySelectSingleBet(){
-        markets.click();
-        List<WebElement> options = driver.findElements(By.className("market__odds"));
 
-        int rSize = (int) Math.floor(Math.random()*options.size());
-
-        List<WebElement> oddButtons = options.get(rSize)
-                .findElements(By.className("odd"));
-
-        js.executeScript("arguments[0].click()",
-                oddButtons.get((int) Math.floor(Math.random()*oddButtons.size()))
-        );
-        System.out.println(rSize);
-    }
 }

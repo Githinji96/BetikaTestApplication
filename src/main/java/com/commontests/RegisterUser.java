@@ -1,6 +1,8 @@
 package com.commontests;
 
+import com.PropertyData.loadProperty;
 import com.randompackage.GenerateRandomData;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -41,10 +44,11 @@ public class RegisterUser {
     WebElement submitBtn;
 
     private final DriverClass driverClass;
+    private String betUrl;
 
     public RegisterUser() {
 
-        this.driverClass = new DriverClass();
+        driverClass = new DriverClass("edge");
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);
@@ -52,8 +56,12 @@ public class RegisterUser {
     }
 
     @BeforeTest
-    public void visitUrl() {
-        driver.get(URL);
+    public void visitUrl() throws IOException {
+        loadProperty ld= new loadProperty();
+        ld.loadProperties();
+        this.betUrl=ld.betUrl;
+        driver.get(betUrl);
+
     }
 
     @AfterTest

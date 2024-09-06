@@ -1,6 +1,8 @@
 package com.commontests;
 
 
+import com.PropertyData.loadProperty;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 
 import com.utils.DriverClass;
@@ -13,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,7 +24,9 @@ public class SelectMultipleSoccerbets {
     WebDriver driver;
     JavascriptExecutor js;
 
-    public String URL = "https://www.betika.com/en-ke/login";
+    public String URL;
+    public String usernumber;
+    public String password;
 
     //placebet button
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
@@ -45,11 +50,17 @@ public class SelectMultipleSoccerbets {
 
     }
 
-    @Test
-    public void placeBets() throws UnhandledAlertException {
-        AppLogin lg = new AppLogin();
+    @Test(retryAnalyzer = rerunFailedTestCases.class)
+    public void placeBets() throws UnhandledAlertException, IOException {
+        loadProperty ld= new loadProperty();
+        ld.loadProperties();
 
-        lg.login(URL, "0711198013", "Bg33173375", new ArrayList<>(Arrays.asList(driver, js)));
+        // Assign the loaded properties to the local instance variables
+        this.URL = ld.URL;
+        this.usernumber = ld.usernumber;
+        this.password = ld.password;
+        AppLogin lg = new AppLogin();
+        lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
 
         // Home, draw or away buttons
         List<WebElement> odds;
@@ -59,6 +70,7 @@ public class SelectMultipleSoccerbets {
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
             int randId = (int) Math.floor(Math.random() * odds.size());
             js.executeScript("arguments[0].click()", odds.get(randId));
+
             //print either homewin, draw or awaywin for the matches choosen
             System.out.println(randId);
         }

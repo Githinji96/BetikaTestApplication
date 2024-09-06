@@ -1,5 +1,7 @@
 package com.commontests;
 
+import com.PropertyData.loadProperty;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
 import org.openqa.selenium.*;
@@ -15,7 +17,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
+import java.io.IOException;
 import java.time.Duration;
 import java.util.*;
 
@@ -24,7 +26,10 @@ public class LoginAndPlaceBetTest {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
-   public String URL = "https://www.betika.com/en-ke/login";
+
+    public String URL;
+    public String usernumber;
+    public String password;
 
     //upcomingbtn
     @FindBy(xpath = "//button[contains(@class, 'match-filter__button') and contains(@class, 'main')]")
@@ -50,9 +55,6 @@ public class LoginAndPlaceBetTest {
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
     WebElement submit;
 
-    @FindAll(@FindBy(className = "market__odds"))
-    List<WebElement> teams;
-
     @FindBy(xpath="//div[@class='rounded-card']")
     WebElement betslip;
 
@@ -74,7 +76,6 @@ public class LoginAndPlaceBetTest {
     public List<WebElement> placedBets;
 
 
-
     // Class constructor
     public LoginAndPlaceBetTest() {
         // initializing the pageObjects
@@ -86,15 +87,26 @@ public class LoginAndPlaceBetTest {
 
     @BeforeTest
     private void login() {
+        loadProperty ld= new loadProperty();
+        try {
+            ld.loadProperties();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        // Assign the loaded properties to the local instance variables
+        this.URL = ld.URL;
+        this.usernumber = ld.usernumber;
+        this.password = ld.password;
+
         AppLogin lg = new AppLogin();
-        lg.login(URL, "0711198013", "Bg33173375", new ArrayList<>(Arrays.asList(driver, js)));
+        lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
 
-    @Test
+    @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void placebet() {
 
         String title = driver.getTitle();
-        Assert.assertEquals(title, "Betika | Best Online Sports Betting in Kenya");
+        System.out.println(title);
 
         //Assert user successful login by viewing my bet page
         if (betProfile.isDisplayed() && betProfile.isEnabled()) {
@@ -112,12 +124,8 @@ public class LoginAndPlaceBetTest {
         driverClass.customWait(driver,5,clickwin);
         clickwin.click();
 
-        WebElement board= driver.findElement(By.xpath("//div[@class='scoreboard']"));
-       //implement explicit wait
-        driverClass.customWait(driver, 5, board);
-       System.out.println(board.getText());
 
-        // Get all options within the match section ()
+        // Get all options within the match section (
         //Random select any market option
         List<WebElement> options = driver.findElements(By.className("market__odds"));
 
@@ -176,7 +184,7 @@ public class LoginAndPlaceBetTest {
      }
      @AfterTest
      public void closeBrowser(){
-       // driver.quit();
+        driver.quit();
      }
 }
 

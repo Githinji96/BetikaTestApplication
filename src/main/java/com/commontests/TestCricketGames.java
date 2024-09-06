@@ -1,5 +1,7 @@
 package com.commontests;
 
+import com.PropertyData.loadProperty;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
 import org.openqa.selenium.*;
@@ -12,6 +14,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +24,10 @@ public class TestCricketGames {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
-    public String URL = "https://www.betika.com/en-ke/login";
+
+    public String URL;
+    public String usernumber;
+    public String password;
 
     @FindBy(xpath= "//span[@class='sports-list__item__label narrow'][normalize-space()='Cricket']")
     WebElement cricketbtn;
@@ -57,10 +63,21 @@ public class TestCricketGames {
 
     @BeforeMethod
     private void login() {
+        loadProperty ld= new loadProperty();
+        try {
+            ld.loadProperties();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        // Assign the loaded properties to the local instance variables
+        this.URL = ld.URL;
+        this.usernumber = ld.usernumber;
+        this.password = ld.password;
+
         AppLogin lg = new AppLogin();
-        lg.login(URL, "0711198013", "Bg33173375", new ArrayList<>(Arrays.asList(driver, js)));
+        lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
-    @Test
+    @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void selectMultipleCricketGames(){
          cricketbtn.click();
         List<WebElement> odds;
