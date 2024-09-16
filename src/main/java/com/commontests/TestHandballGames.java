@@ -26,7 +26,7 @@ public class TestRugbyGames {
     public String password;
 
 
-    @FindBy(xpath = "//span[normalize-space()='Rugby']")
+    @FindBy(xpath = "(//div[@class='sports-list__item'])[5]")
     WebElement rugbybtn;
 
     @FindBy(xpath="//button[normalize-space()='See all upcoming rugby matches']")
@@ -74,7 +74,7 @@ public class TestRugbyGames {
         } catch (NoSuchElementException e) {
             System.out.println("Upcoming matches button not found, proceeding with available matches.");
         }
-          Thread.sleep(4000);
+
         //upcomingmatches.click();
         clickmarkets.click();
 
