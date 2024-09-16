@@ -75,7 +75,7 @@ public class SelectMultipleSoccerbets {
             System.out.println(randId);
         }
         System.out.println("Number of matches. " + teams.size());
-         // get all matches selected
+         // get all matches selected in betslip
         for (WebElement listItem : roundedCard) {
             System.out.println(listItem.getText());
         }
@@ -89,7 +89,7 @@ public class SelectMultipleSoccerbets {
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
+       // driver.quit();
         driver = null;
 
     }

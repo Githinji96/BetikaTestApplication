@@ -3,12 +3,13 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="com.ListenersPackage.Listeners"/>
+        <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
         </listeners>
 
     <test verbose="2" preserve-order="true"
           name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication">
         <classes>
-            <class name="com.commontests.LoginAndPlaceBetTest">
+            <class name="com.commontests.PlaceSoccerBetTest">
                 <methods>
                    <include name="placebet"/>
                 </methods>

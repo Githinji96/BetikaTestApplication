@@ -89,7 +89,7 @@ public class TestTableTennis {
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
             int randId = (int) Math.floor(Math.random() * odds.size());
             js.executeScript("arguments[0].click()", odds.get(randId));
-            //print either homewin, draw or awaywin for the matches choosen
+            //print either home win or awaywin for the matches choosen
             System.out.println(randId);
         }
         System.out.println("Number of matches. " + teams.size());

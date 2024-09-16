@@ -55,7 +55,7 @@ public class TestCricketGames {
 
     public TestCricketGames(){
         // initializing the pageObjects
-        driverClass = new DriverClass();
+        driverClass = new DriverClass("firefox");
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);

@@ -7,7 +7,6 @@ import com.utils.DriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestRugbyGames {
+public class TestHandballGames {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -38,7 +37,7 @@ public class TestRugbyGames {
     @FindBy(xpath = "//div[@class='stacked__row stacked__market']")
     WebElement printselectedOption;
 
-    public TestRugbyGames(){
+    public TestHandballGames(){
         // initializing the pageObjects
         driverClass = new DriverClass();
         driver = driverClass.driver;

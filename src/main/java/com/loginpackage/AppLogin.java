@@ -25,29 +25,43 @@ public class AppLogin {
     @FindBy(xpath = "//button[@class='button account__payments__submit session__form__button login button button__secondary']")
     WebElement loginBtn;
 
+    //login method that is passed to every test class
     public void login(String url, String contactNo, String pass, ArrayList<?> drDetails) {
         try {
-            PageFactory.initElements(((WebDriver) (drDetails.get(searchObject(drDetails, "driver")))), this);
+            int driverIndex = searchObject(drDetails, "driver");
+            int jsIndex = searchObject(drDetails, "jsExecutor");
 
-            int index = searchObject(drDetails, "driver");
+            if (driverIndex == -1 || jsIndex == -1) {
+                throw new RuntimeException("Required WebDriver or JavascriptExecutor object not found in the list.");
+            }
 
-            ((WebDriver) (drDetails.get(index))).get(url);
+            WebDriver driver = (WebDriver) drDetails.get(driverIndex);
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) drDetails.get(jsIndex);
+
+            PageFactory.initElements(driver, this);
+            driver.get(url);
             phoneNumber.sendKeys(contactNo);
             password.sendKeys(pass);
-            ((JavascriptExecutor) (drDetails.get(searchObject(drDetails, "jsExecutor")))).executeScript("arguments[0].click();", loginBtn);
+            jsExecutor.executeScript("arguments[0].click();", loginBtn);
+
         } catch (UnhandledAlertException e) {
             System.err.println("Unhandled alert Error!");
+        } catch (Exception e) {
+            System.err.println("An error occurred during login: " + e.getMessage());
         }
     }
 
     private int searchObject(ArrayList<?> props, String searchTerm) {
-        for (Object member : props) {
-            if ((member instanceof WebDriver) && (searchTerm.equalsIgnoreCase("driver"))) {
-                return props.indexOf(member);
-            } else if ((member instanceof JavascriptExecutor) && (searchTerm.equalsIgnoreCase("jsExecutor"))) {
-                return props.indexOf(member);
+        for (int i = 0; i < props.size(); i++) {
+            Object member = props.get(i);
+            if (member instanceof WebDriver && searchTerm.equalsIgnoreCase("driver")) {
+                return i;
+            } else if (member instanceof JavascriptExecutor && searchTerm.equalsIgnoreCase("jsExecutor")) {
+                return i;
             }
         }
-        return 0;
+        // Return -1 if not found to better indicate an error
+        return -1;
     }
+
 }

@@ -10,18 +10,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.*;
 
-public class LoginAndPlaceBetTest {
+public class PlaceSoccerBetTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -77,7 +74,7 @@ public class LoginAndPlaceBetTest {
 
 
     // Class constructor
-    public LoginAndPlaceBetTest() {
+    public PlaceSoccerBetTest() {
         // initializing the pageObjects
         driverClass = new DriverClass("chrome");
         driver = driverClass.driver;
