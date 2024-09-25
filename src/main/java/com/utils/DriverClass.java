@@ -42,10 +42,6 @@ public class DriverClass {
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-
-       	ChromeOptions options = new ChromeOptions();
-           options.addArguments("--remote--allow-origins=*");
-
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
@@ -60,11 +56,11 @@ public class DriverClass {
     public void customWait(WebDriver dr,Integer duration, WebElement element){
         new WebDriverWait(dr, Duration.ofSeconds(duration)).until(ExpectedConditions.visibilityOf(element));
     }
-    public void takeScreenshot(String fileName) throws IOException {
+    public void takeScreenshot(String fileName) throws IOException{
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-	File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-	File destFile = new File("./screenshots/"+fileName);
-	FileUtils.copyFile(sourceFile, destFile);
-	System.out.println("Screenshot saved successfully");
+	    File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+	    File destFile = new File("./screenshots/"+fileName);
+	    FileUtils.copyFile(sourceFile, destFile);
+	    System.out.println("Screenshot saved successfully");
     }
 }

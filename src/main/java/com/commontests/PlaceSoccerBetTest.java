@@ -40,7 +40,7 @@ public class PlaceSoccerBetTest {
     // click apply
 
     @FindBy(xpath = "(//a[@class='prebet-match__markets'][contains(normalize-space(), 'Markets')])[1]")
-    WebElement clickwin;
+    WebElement clickbtn;
 
     @FindBy(xpath = "//a[@href='/en-ke/profile']")
     WebElement betProfile;
@@ -52,7 +52,7 @@ public class PlaceSoccerBetTest {
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
     WebElement submit;
 
-    @FindBy(xpath="//div[@class='rounded-card']")
+    @FindBy(className="stacked__details")
     WebElement betslip;
 
     @FindBy(className = "stacked__odd")
@@ -112,14 +112,14 @@ public class PlaceSoccerBetTest {
             System.out.println("Element is not displayed");
         }
 
-        filterbtn.click();
+        js.executeScript("arguments[0].click()",filterbtn);
 
         driverClass.customWait(driver, 5, apply);
         gameDay.click();
         apply.click();
 
-        driverClass.customWait(driver,5,clickwin);
-        clickwin.click();
+        driverClass.customWait(driver,5,clickbtn);
+        clickbtn.click();
 
 
         // Get all options within the match section (
@@ -153,7 +153,7 @@ public class PlaceSoccerBetTest {
         double accBalance = Double.parseDouble(amnt1);
         System.out.println("The account balance "+accBalance);
 
-         //place bet if the account balance amount is greater than 99.
+         //place bet if the account balance amount is greater than kes99.
         if(accBalance>=99){
             js.executeScript("arguments[0].click()", submit);
             //notification-show success > title
@@ -165,6 +165,7 @@ public class PlaceSoccerBetTest {
         else{
             System.out.println("Amount is less in the account to place a bet");
         }
+
 
     }
       //verify betslip
@@ -181,7 +182,7 @@ public class PlaceSoccerBetTest {
      }
      @AfterTest
      public void closeBrowser(){
-        driver.quit();
+        driver.close();
      }
 }
 

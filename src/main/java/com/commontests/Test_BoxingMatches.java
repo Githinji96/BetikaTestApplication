@@ -82,7 +82,7 @@ public class Test_BoxingMatches {
         boxingbtn.click();
         // Handle case where the upcoming matches button might not be present
         try {
-           upcomingmatches.click();
+            js.executeScript("arguments[0].click()",upcomingmatches);
         } catch (NoSuchElementException e) {
             System.out.println("Upcoming matches button not found, proceeding with available matches.");
         }
