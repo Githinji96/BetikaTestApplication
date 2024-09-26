@@ -10,6 +10,7 @@ public class loadProperty {
     public String usernumber;
     public String password;
     public String betUrl;
+    public String liveUrl;
 
     public void loadProperties() throws IOException {
         String projectPath = System.getProperty("user.dir");
@@ -21,5 +22,7 @@ public class loadProperty {
         usernumber = prop.getProperty("login.usernumber");
         password = prop.getProperty("login.password");
         betUrl = prop.getProperty("launchUrl.betUrl");
+        liveUrl=prop.getProperty("visitLiveUrl.liveUrl");
+
     }
 }

@@ -60,8 +60,7 @@ public class TestAmericaFootballGames {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
 
-   //@Test(retryAnalyzer = rerunFailedTestCases.class)
-    @Test
+   @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void TestAmericanFootballGames(){
         americanftball.click();
         try {

@@ -3,10 +3,7 @@ import com.PropertyData.loadProperty;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -38,6 +35,10 @@ public class TestTableTennis {
 
     @FindAll(@FindBy(className ="rounded-card" ))
     public List<WebElement>roundedCard;
+
+    //Amount placeholder
+    @FindBy(xpath = "//input[@placeholder='Enter stake']")
+    WebElement enterAmt;
 
     @FindBy(className = "modal__container")
     WebElement modalContainer;
@@ -97,6 +98,8 @@ public class TestTableTennis {
         for (WebElement listItem : roundedCard) {
             System.out.println(listItem.getText());
         }
+        enterAmt.sendKeys(Keys.CONTROL + "a" + Keys.BACK_SPACE);
+        enterAmt.sendKeys("30000");
         // Submit the bets
         js.executeScript("arguments[0].click()", submit);
 
