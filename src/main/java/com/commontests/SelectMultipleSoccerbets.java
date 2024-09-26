@@ -89,7 +89,7 @@ public class SelectMultipleSoccerbets {
 
         // Home, draw or away buttons
         List<WebElement> odds;
-        // Randomly choose team and place 4 bets
+        // Randomly choose team and place multiple bets
         for (int i = 0; i <10; i++) {
             int randomTeam = (int) Math.floor(Math.random() * teams.size());
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));

@@ -89,7 +89,7 @@ public class Test_BoxingMatches {
 
 
         List<WebElement> odds;
-        // Randomly choose team and place 4 bets
+        // Randomly choose team and place multiple bets
         for (int i = 0; i <6; i++) {
             int randomTeam = (int) Math.floor(Math.random() * teams.size());
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));

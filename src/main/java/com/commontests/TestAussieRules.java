@@ -90,7 +90,7 @@ public class TestAussieRules {
             System.out.println("Upcoming matches button not found, proceeding with available matches.");
         }
         List<WebElement> odds;
-        // Randomly choose team and place 4 bets
+        // Randomly choose team and place  bets
         for (int i = 0; i <7; i++) {
             int randomTeam = (int) Math.floor(Math.random() * teams.size());
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));

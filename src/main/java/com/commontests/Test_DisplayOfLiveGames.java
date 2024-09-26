@@ -26,7 +26,6 @@ public class Test_DisplayOfLiveGames {
         js = driverClass.js;
         PageFactory.initElements(driver, this);
 
-
     }
     @BeforeMethod
     private void visitLiveUrl() {
@@ -39,17 +38,20 @@ public class Test_DisplayOfLiveGames {
         // Assign the loaded properties to the local instance variables
         this.liveurl = ld.liveUrl;
 
-        driver.get(liveurl);
+        //navigate to the live games link
+       driver.get(liveurl);
+
 
     }
-    @Test
+   @Test
     public void testlive(){
         java.util.List<WebElement> games = driver.findElements(By.className("live__matches"));
 
-// Loop through each WebElement and print the text
+      // Loop through each WebElement and print the text
         //print the live games in session.
         for (WebElement game : games) {
          System.out.println(game.getText());
+
         }
 
     }

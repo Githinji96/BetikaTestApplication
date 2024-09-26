@@ -123,7 +123,7 @@ public class PlaceSoccerBetTest {
 
 
         // Get all options within the match section (
-        //Random select any market option
+        //Random select any market option and place a single bet
         List<WebElement> options = driver.findElements(By.className("market__odds"));
 
         int rSize = (int) Math.floor(Math.random()*options.size());
