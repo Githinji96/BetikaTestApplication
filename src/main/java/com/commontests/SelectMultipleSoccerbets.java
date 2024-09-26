@@ -75,7 +75,7 @@ public class SelectMultipleSoccerbets {
 
    // @Test(retryAnalyzer = rerunFailedTestCases.class)
     @Test
-    public void placeBets() throws UnhandledAlertException, IOException {
+    public void login() throws UnhandledAlertException, IOException {
         loadProperty ld= new loadProperty();
         ld.loadProperties();
 

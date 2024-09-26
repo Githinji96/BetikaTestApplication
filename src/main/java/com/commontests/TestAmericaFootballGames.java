@@ -1,8 +1,8 @@
 package com.commontests;
 
 import com.PropertyData.loadProperty;
-import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestHandballGames {
+public class TestAmericaFootballGames {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -24,11 +24,10 @@ public class TestHandballGames {
     public String usernumber;
     public String password;
 
+    @FindBy(xpath="//span[@class='sports-list__item__label narrow' and text()='American Football']")
+    WebElement americanftball;
 
-    @FindBy(xpath = "//span[contains(@class, 'sports-list__item__label') and text()='Handball']")
-    WebElement handballbtn;
-
-    @FindBy(xpath="")
+    @FindBy(xpath="//button[normalize-space()='See all upcoming american football matches']")
     WebElement upcomingmatches;
 
     @FindBy(xpath="//a[@class='prebet-match__markets'][1]")
@@ -37,16 +36,15 @@ public class TestHandballGames {
     @FindBy(className = "stacked__details")
     WebElement printselectedOption;
 
-    public TestHandballGames(){
+    public TestAmericaFootballGames() {
         // initializing the pageObjects
-        driverClass = new DriverClass();
+        driverClass = new DriverClass("chrome");
         driver = driverClass.driver;
-        js = driverClass.js;//
+        js = driverClass.js;
         PageFactory.initElements(driver, this);
     }
-
     @BeforeMethod
-    private void login() {
+    public void login() {
         loadProperty ld= new loadProperty();
         try {
             ld.loadProperties();
@@ -60,21 +58,19 @@ public class TestHandballGames {
 
         AppLogin lg = new AppLogin();
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
-
     }
 
-    @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void selectSingleRandomBet() throws InterruptedException {
-       handballbtn.click();
-
-//        try {
-//            upcomingmatches.click();
-//        } catch (NoSuchElementException e) {
-//            System.out.println("Upcoming matches button not found, proceeding with available matches.");
-//        }
-//
+   //@Test(retryAnalyzer = rerunFailedTestCases.class)
+    @Test
+    public void TestAmericanFootballGames(){
+        americanftball.click();
+        try {
+            js.executeScript("arguments[0].click()",upcomingmatches);
+        } catch (NoSuchElementException e) {
+            System.out.println("Upcoming matches button not found, proceeding with available matches.");
+        }
         clickmarkets.click();
-
+        //select and place random market in one single game
         List<WebElement> options = driver.findElements(By.className("market__odds"));
 
         int rSize = (int) Math.floor(Math.random()*options.size());
@@ -83,10 +79,11 @@ public class TestHandballGames {
                 .findElements(By.className("odd"));
 
         js.executeScript("arguments[0].click()",
-               oddButtons.get((int) Math.floor(Math.random()*oddButtons.size()))
+                oddButtons.get((int) Math.floor(Math.random()*oddButtons.size()))
         );
         //get the randomly selected option bet
-         System.out.println(printselectedOption.getText());
+        System.out.println(printselectedOption.getText());
 
     }
+
 }
