@@ -107,7 +107,7 @@ public class TestAussieRules {
 
         //Verify the betslip informations
         System.out.println("The betslip "+betslip.getText());
-        System.out.println("The total odds "+oddValue.getText());
+
 
         //get bet balance amount
         String amnt=accountBalance.getText();

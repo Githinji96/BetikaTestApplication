@@ -1,6 +1,7 @@
 package com.commontests;
 
 import com.PropertyData.loadProperty;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -43,15 +44,20 @@ public class Test_DisplayOfLiveGames {
 
 
     }
-   @Test
+    @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void testlive(){
         java.util.List<WebElement> games = driver.findElements(By.className("live__matches"));
 
       // Loop through each WebElement and print the text
         //print the live games in session.
-        for (WebElement game : games) {
-         System.out.println(game.getText());
 
+        if(games.isEmpty()){
+            System.out.println("No live games availabe");
+        }else{
+
+        for (WebElement game : games) {
+            System.out.println(game.getText());
+        }
         }
 
     }

@@ -49,9 +49,6 @@ public class TestTableTennis {
     WebElement submit;
 
 
-    //select randomlybet
-    @FindBy(xpath="//div[@class='desktop-layout__content__center']//div[5]//div[3]//a[1]")
-    WebElement markets;
 
     // Class constructor
     public TestTableTennis() {
@@ -91,7 +88,8 @@ public class TestTableTennis {
             int randId = (int) Math.floor(Math.random() * odds.size());
             js.executeScript("arguments[0].click()", odds.get(randId));
             //print either home win or awaywin for the matches choosen
-            System.out.println(randId);
+            System.out.println("Bet placed on odd index: " + randId);
+
         }
         System.out.println("Number of matches. " + teams.size());
         // get all matches selected
@@ -110,5 +108,6 @@ public class TestTableTennis {
         cancelModal.click();
 
     }
+
 
 }

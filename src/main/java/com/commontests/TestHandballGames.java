@@ -39,7 +39,7 @@ public class TestHandballGames {
 
     public TestHandballGames(){
         // initializing the pageObjects
-        driverClass = new DriverClass();
+        driverClass = new DriverClass("chrome");
         driver = driverClass.driver;
         js = driverClass.js;//
         PageFactory.initElements(driver, this);
@@ -67,12 +67,6 @@ public class TestHandballGames {
     public void selectSingleRandomBet() throws InterruptedException {
        handballbtn.click();
 
-//        try {
-//            upcomingmatches.click();
-//        } catch (NoSuchElementException e) {
-//            System.out.println("Upcoming matches button not found, proceeding with available matches.");
-//        }
-//
         clickmarkets.click();
 
         List<WebElement> options = driver.findElements(By.className("market__odds"));

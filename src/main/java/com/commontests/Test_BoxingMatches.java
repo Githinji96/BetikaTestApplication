@@ -96,7 +96,8 @@ public class Test_BoxingMatches {
             int randId = (int) Math.floor(Math.random() * odds.size());
             js.executeScript("arguments[0].click()", odds.get(randId));
             //print either homewin, draw or awaywin for the matches choosen
-            System.out.println(randId);
+            System.out.println("Bet placed on odd index: " + randId);
+
         }
 
             enterAmt.sendKeys(Keys.CONTROL + "a" + Keys.BACK_SPACE);

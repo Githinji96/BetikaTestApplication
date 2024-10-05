@@ -37,7 +37,7 @@ public class Test_Notifications {
     // Class constructor
     public Test_Notifications() {
         // initializing the pageObjects
-        driverClass = new DriverClass("firefox");
+        driverClass = new DriverClass("chrome");
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);

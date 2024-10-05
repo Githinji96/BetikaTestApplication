@@ -34,10 +34,10 @@ public class PlaceSoccerBetTest {
 
     @FindBy(xpath = "//button[normalize-space()='Tomorrow' or normalize-space()='Monday']")
     WebElement  gameDay;
-    //highlight matches btn
-    @FindBy(xpath = "(//button[normalize-space()='Apply'])[1]")
+
+    @FindBy(className = "match-filter__apply")
     WebElement apply;
-    // click apply
+
 
     @FindBy(xpath = "(//a[@class='prebet-match__markets'][contains(normalize-space(), 'Markets')])[1]")
     WebElement clickbtn;
@@ -111,12 +111,12 @@ public class PlaceSoccerBetTest {
         } else {
             System.out.println("Element is not displayed");
         }
-
+        driverClass.customWait(driver, 5, filterbtn);
         js.executeScript("arguments[0].click()",filterbtn);
 
-        driverClass.customWait(driver, 5, apply);
-        gameDay.click();
-        apply.click();
+        js.executeScript("arguments[0].click()",gameDay);
+
+        js.executeScript("arguments[0].click()",apply);
 
         driverClass.customWait(driver,5,clickbtn);
         clickbtn.click();
@@ -136,7 +136,7 @@ public class PlaceSoccerBetTest {
         );
         System.out.println(rSize);
 
-        driverClass.customWait(driver, 10, enterAmt);
+     //   driverClass.customWait(driver, 10, enterAmt);
 
         enterAmt.sendKeys(Keys.CONTROL + "a" + Keys.BACK_SPACE);
         enterAmt.sendKeys("99");
@@ -182,7 +182,7 @@ public class PlaceSoccerBetTest {
      }
      @AfterTest
      public void closeBrowser(){
-        driver.close();
+        //driver.close();
      }
 }
 
