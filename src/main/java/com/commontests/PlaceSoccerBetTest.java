@@ -92,7 +92,7 @@ public class PlaceSoccerBetTest {
         }
         // Assign the loaded properties to the local instance variables
         this.URL = ld.URL;
-        this.usernumber = ld.usernumber;
+        this.usernumber = ld.userNumber;
         this.password = ld.password;
 
         AppLogin lg = new AppLogin();
@@ -115,6 +115,7 @@ public class PlaceSoccerBetTest {
         js.executeScript("arguments[0].click()",filterbtn);
 
         js.executeScript("arguments[0].click()",gameDay);
+        driverClass.customWait(driver, 5, apply);
 
         js.executeScript("arguments[0].click()",apply);
 
@@ -170,8 +171,9 @@ public class PlaceSoccerBetTest {
     }
       //verify betslip
     @Test
-     public void verifyMyBets(){
+     public void verifyMyBets() throws InterruptedException {
         betProfileLink.click();
+        Thread.sleep(5000);
         openMadal.click();
         chooseAll.click();
         // Iterate through the list and print all bets in account

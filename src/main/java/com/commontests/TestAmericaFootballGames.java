@@ -53,7 +53,7 @@ public class TestAmericaFootballGames {
         }
         // Assign the loaded properties to the local instance variables
         this.URL = ld.URL;
-        this.usernumber = ld.usernumber;
+        this.usernumber = ld.userNumber;
         this.password = ld.password;
 
         AppLogin lg = new AppLogin();

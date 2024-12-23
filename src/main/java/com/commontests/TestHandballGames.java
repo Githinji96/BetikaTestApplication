@@ -39,7 +39,7 @@ public class TestHandballGames {
 
     public TestHandballGames(){
         // initializing the pageObjects
-        driverClass = new DriverClass("chrome");
+        driverClass = new DriverClass("edge");
         driver = driverClass.driver;
         js = driverClass.js;//
         PageFactory.initElements(driver, this);
@@ -55,7 +55,7 @@ public class TestHandballGames {
         }
         // Assign the loaded properties to the local instance variables
         this.URL = ld.URL;
-        this.usernumber = ld.usernumber;
+        this.usernumber = ld.userNumber;
         this.password = ld.password;
 
         AppLogin lg = new AppLogin();

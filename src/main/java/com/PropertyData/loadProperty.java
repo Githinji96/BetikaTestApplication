@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class loadProperty {
     public String URL;
-    public String usernumber;
+    public String userNumber;
     public String password;
     public String betUrl;
     public String liveUrl;
@@ -19,7 +19,7 @@ public class loadProperty {
         Properties prop = new Properties();
         prop.load(input);
         URL = prop.getProperty("login.url");
-        usernumber = prop.getProperty("login.usernumber");
+        userNumber = prop.getProperty("login.usernumber");
         password = prop.getProperty("login.password");
         betUrl = prop.getProperty("launchUrl.betUrl");
         liveUrl=prop.getProperty("visitLiveUrl.liveUrl");

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -69,7 +70,7 @@ public class TestTableTennis {
         }
         // Assign the loaded properties to the local instance variables
         this.URL = ld.URL;
-        this.usernumber = ld.usernumber;
+        this.usernumber = ld.userNumber;
         this.password = ld.password;
 
         AppLogin lg = new AppLogin();
@@ -107,6 +108,11 @@ public class TestTableTennis {
         //cancel the modal after its launched.
         cancelModal.click();
 
+    }
+
+    @AfterTest
+    public void teardown(){
+        //driver.close();
     }
 
 

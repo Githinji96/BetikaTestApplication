@@ -22,22 +22,22 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Test_Notifications {
+public class TestNotifications {
 
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
 
     public String URL;
-    public String usernumber;
+    public String userNumber;
     public String password;
 
     @FindBy(xpath="//button[@class='user-notifications__toggle']//span[@class='visible-desktop'][normalize-space()='Notifications']")
     WebElement notification;
     // Class constructor
-    public Test_Notifications() {
+    public TestNotifications() {
         // initializing the pageObjects
-        driverClass = new DriverClass("chrome");
+        driverClass = new DriverClass("firefox");
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);
@@ -49,11 +49,11 @@ public class Test_Notifications {
         ld.loadProperties();
         // Assign the loaded properties to the local instance variables
         this.URL = ld.URL;
-        this.usernumber = ld.usernumber;
+        this.userNumber = ld.userNumber;
         this.password = ld.password;
 
         AppLogin lg = new AppLogin();
-        lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
+        lg.login(URL, userNumber, password, new ArrayList<>(Arrays.asList(driver, js)));
 
 
     }

@@ -1,17 +1,17 @@
 package com.loginpackage;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.UnhandledAlertException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
 
 public class AppLogin {
 
+    private static final Logger log = LoggerFactory.getLogger(AppLogin.class);
     // page factory
     //phone number login locator
     @FindBy(xpath = "//input[@placeholder='e.g. 0712 234567']")
@@ -43,6 +43,7 @@ public class AppLogin {
             phoneNumber.sendKeys(contactNo);
             password.sendKeys(pass);
             jsExecutor.executeScript("arguments[0].click();", loginBtn);
+
 
         } catch (UnhandledAlertException e) {
             System.err.println("Unhandled alert Error!");
