@@ -77,6 +77,7 @@ public class TestCasinoGames {
         Assert.assertTrue(SecondcasinoGame.isDisplayed(), "Second casino game is not displayed!");
         SecondcasinoGame.click();
 
+        //launch extra juicy casino game
         WebElement elembtn=driver.findElement(By.xpath("//button[normalize-space()='Play Game']"));
         Assert.assertTrue(elembtn.isEnabled(), "Button not clickable!");
         elembtn.click();

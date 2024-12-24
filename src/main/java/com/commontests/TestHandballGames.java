@@ -28,7 +28,7 @@ public class TestHandballGames {
     @FindBy(xpath = "//span[contains(@class, 'sports-list__item__label') and text()='Handball']")
     WebElement handballbtn;
 
-    @FindBy(xpath="")
+    @FindBy(xpath="//button[normalize-space()='See all upcoming handball matches']")
     WebElement upcomingmatches;
 
     @FindBy(xpath="//a[@class='prebet-match__markets'][1]")
@@ -66,7 +66,11 @@ public class TestHandballGames {
     @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void selectSingleRandomBet() throws InterruptedException {
        handballbtn.click();
-
+        try {
+            js.executeScript("arguments[0].click()",upcomingmatches);
+        } catch (NoSuchElementException e) {
+            System.out.println("Upcoming matches button not found, proceeding with available matches.");
+        }
         clickmarkets.click();
 
         List<WebElement> options = driver.findElements(By.className("market__odds"));
