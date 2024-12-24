@@ -47,19 +47,20 @@ public class TestCasinoGames {
 
         AppLogin lg = new AppLogin();
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
-
-    }
-
-    @Test
-    public void casinoTest(){
-
         Set<Cookie> cookies = driver.manage().getCookies();
-        driver.get("https://www.betika.com/en-ke/casino");
         for (Cookie cookie : cookies) {
             if (cookie.getDomain().contains("betika.com")) { // Check if the cookie is for Betika
                 driver.manage().addCookie(cookie);
             }
         }
+    }
+
+    @Test
+    public void casinoTest(){
+
+
+        driver.get("https://www.betika.com/en-ke/casino");
+
         List<WebElement> listItems = driver.findElements(By.xpath("//div[@class='casino__games']"));
 
         // Iterate through the list and print the text of each element
