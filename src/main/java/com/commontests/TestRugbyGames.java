@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestAussieRules {
+public class TestRugbyGames {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -31,7 +31,7 @@ public class TestAussieRules {
     public String password;
 
 
-    @FindBy(xpath="//span[@class='sports-list__item__label narrow'][normalize-space()='Aussie Rules']")
+    @FindBy(xpath="//span[@class='sports-list__item__label narrow'][normalize-space()='Rugby']")
     WebElement aussieRulebtn;
 
     @FindBy(xpath = "//button[normalize-space()='See all upcoming aussie rules matches']")
@@ -56,7 +56,7 @@ public class TestAussieRules {
     WebElement submit;
 
 
-    public TestAussieRules(){
+    public TestRugbyGames(){
 
             // initializing the pageObjects
             driverClass = new DriverClass("edge");
