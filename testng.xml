@@ -21,8 +21,9 @@
             </class>
             <class name="com.commontests.SelectMultipleSoccerbets">
                 <methods>
-                    <include name="placeBets"/>
+                    <include name="SelectMultipleSoccerbets"/>
                 </methods>
+
             </class>
             <class name="com.commontests.Test_BrokenLinks">
                 <methods>
@@ -34,14 +35,14 @@
                     <include name=" PlacementBoxingMatches"/>
                 </methods>
             </class>
-            <class name="com.commontests.Test_Notifications">
+            <class name="com.commontests.TestNotifications">
                 <methods>
                     <include name="notifications_Test"/>
                 </methods>
             </class>
-            <class name="com.commontests.Test_BrokenLinks">
+            <class name="com.commontests.TestHandballGames">
                 <methods>
-                    <include name="testBrokenLinks"/>
+                    <include name="selectSingleRandomBet"/>
                 </methods>
             </class>
         </classes>

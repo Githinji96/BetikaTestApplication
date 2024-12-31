@@ -86,19 +86,43 @@ public class Test_BoxingMatches {
         } catch (NoSuchElementException e) {
             System.out.println("Upcoming matches button not found, proceeding with available matches.");
         }
-
-
         List<WebElement> odds;
-        // Randomly choose team and place multiple bets
-        for (int i = 0; i <6; i++) {
-            int randomTeam = (int) Math.floor(Math.random() * teams.size());
-            odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
-            int randId = (int) Math.floor(Math.random() * odds.size());
-            js.executeScript("arguments[0].click()", odds.get(randId));
-            //print either homewin, draw or awaywin for the matches choosen
-            System.out.println("Bet placed on odd index: " + randId);
 
+        // Loop to place bets on multiple matches
+        for (int i = 0; i < 6; i++) {
+            // Randomly select a team index
+            int randomTeamIndex = (int) Math.floor(Math.random() * teams.size());
+
+            // Retrieve all betting odds for the selected team
+            odds = teams.get(randomTeamIndex).findElements(By.className("prebet-match__odd"));
+
+            // Check if there are any odds available for the selected team
+            if (odds.isEmpty()) {
+                System.out.println("No betting odds available for the selected team.");
+                continue; // Skip this iteration if no odds are found
+            }
+
+            // Randomly select an odd from the retrieved list
+            int randomOddIndex = (int) Math.floor(Math.random() * odds.size());
+
+            // Place the bet by clicking the selected odd
+            js.executeScript("arguments[0].click()", odds.get(randomOddIndex));
+
+            // Print the selected odd index and the type of bet placed
+            System.out.println("Bet placed on odd index: " + randomOddIndex + " for team index: " + randomTeamIndex);
         }
+
+//        List<WebElement> odds;
+//        // Randomly choose team and place multiple bets
+//        for (int i = 0; i <6; i++) {
+//            int randomTeam = (int) Math.floor(Math.random() * teams.size());
+//            odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
+//            int randId = (int) Math.floor(Math.random() * odds.size());
+//            js.executeScript("arguments[0].click()", odds.get(randId));
+//            //print either homewin, draw or awaywin for the matches choosen
+//            System.out.println("Bet placed on odd index: " + randId);
+//
+//        }
 
             enterAmt.sendKeys(Keys.CONTROL + "a" + Keys.BACK_SPACE);
             enterAmt.sendKeys("88");

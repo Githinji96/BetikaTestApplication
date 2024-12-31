@@ -6,6 +6,7 @@ import com.utils.DriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,7 +27,7 @@ public class TestCasinoGames {
 
     public TestCasinoGames() {
         // initializing the pageObjects
-        driverClass = new DriverClass("firefox");
+        driverClass = new DriverClass("edge");
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);
@@ -55,9 +56,8 @@ public class TestCasinoGames {
         }
     }
 
-    @Test
+    @Test(invocationCount = 2)
     public void casinoTest(){
-
 
         driver.get("https://www.betika.com/en-ke/casino");
 
@@ -82,5 +82,9 @@ public class TestCasinoGames {
         Assert.assertTrue(elembtn.isEnabled(), "Button not clickable!");
         elembtn.click();
 
+    }
+    @AfterMethod
+    public void teardown(){
+      //  driver.quit();
     }
 }

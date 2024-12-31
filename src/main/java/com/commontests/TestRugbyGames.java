@@ -32,7 +32,7 @@ public class TestRugbyGames {
 
 
     @FindBy(xpath="//span[@class='sports-list__item__label narrow'][normalize-space()='Rugby']")
-    WebElement aussieRulebtn;
+    WebElement rugbybtn;
 
     @FindBy(xpath = "//button[normalize-space()='See all upcoming aussie rules matches']")
     WebElement clickupcomingmatches;
@@ -82,7 +82,7 @@ public class TestRugbyGames {
     }
     @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void selectRandomlyAussieGames(){
-        aussieRulebtn.click();
+        rugbybtn.click();
 
         try {
             clickupcomingmatches.click();
