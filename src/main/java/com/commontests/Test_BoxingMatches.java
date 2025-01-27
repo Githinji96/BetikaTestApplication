@@ -84,7 +84,7 @@ public class Test_BoxingMatches {
         try {
             js.executeScript("arguments[0].click()",upcomingmatches);
         } catch (NoSuchElementException e) {
-            System.out.println("Upcoming matches button not found, proceeding with available matches.");
+
         }
         List<WebElement> odds;
 

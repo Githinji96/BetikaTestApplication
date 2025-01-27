@@ -5,6 +5,7 @@ import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -71,6 +72,13 @@ public class PlaceSoccerBetTest {
 
     @FindAll(@FindBy(className = "bets"))
     public List<WebElement> placedBets;
+
+    @FindBy(xpath="//div[@class='my-bets-bet']")
+    WebElement betslipbtn;
+
+
+    @FindAll(@FindBy(className = "betdetails__events__list"))
+    public List<WebElement> matchesResults;
 
 
     // Class constructor
@@ -173,15 +181,45 @@ public class PlaceSoccerBetTest {
     @Test
      public void verifyMyBets() throws InterruptedException {
         betProfileLink.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         openMadal.click();
         chooseAll.click();
-        // Iterate through the list and print all bets in account
-        System.out.println("==================================================");
+        // Iterate through the list and print all bets ID in account
+        System.out.println("====================");
         for (WebElement listItem : placedBets) {
-            System.out.println(listItem.getText());
+
+            String betText = listItem.getText();
+            if (betText.isEmpty()) {
+                System.out.println("No Placed bets ID found.");
+            } else {
+                System.out.println(betText);
+            }
         }
-     }
+
+         //open the betslip to print betslip teams information with respective to the games outcomes
+        try {
+            // Check if the betslip button is displayed
+            if (betslipbtn.isDisplayed()) {
+                betslipbtn.click();
+
+                // Check if matchesResults list is empty
+                if (matchesResults.isEmpty()) {
+                    System.out.println("No matches Results found on placed bet ID.");
+                } else {
+                    for (WebElement itemlist : matchesResults) {
+                        System.out.println("=======================");
+                        System.out.println(itemlist.getText());
+                    }
+                }
+            } else {
+                System.out.println("Betslip outcomes button is not displayed.");
+            }
+        } catch (NoSuchElementException e) {
+
+        }
+
+
+    }
      @AfterTest
      public void closeBrowser(){
         //driver.close();

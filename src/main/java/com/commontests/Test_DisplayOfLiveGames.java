@@ -56,6 +56,7 @@ public class Test_DisplayOfLiveGames {
         }else{
 
         for (WebElement game : games) {
+
             System.out.println(game.getText());
         }
         }

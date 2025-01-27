@@ -42,6 +42,9 @@ public class SelectMultipleSoccerbets {
     @FindAll(@FindBy(className = "prebet-match__odds"))
     List<WebElement> teams;
 
+    @FindAll(@FindBy(className = "prebet-match__odd-market__container"))
+    public List<WebElement> oddsContainer;
+
     @FindBy(xpath = "//input[@placeholder='Enter stake']")
     WebElement enterAmt;
 
@@ -91,7 +94,18 @@ public class SelectMultipleSoccerbets {
     }
    @Test
     public void TestSelectionOfMultipleSoccerGames() {
+       List<WebElement> listItems = oddsContainer;
 
+       // Iterate through the list and print the text of each element
+       if (listItems.isEmpty()) {
+           System.out.println("No  matches Games Found");
+       } else {
+           // Iterate through the list and print the text of each element
+           for (WebElement listItem : listItems) {
+               System.out.println("============================================");
+               System.out.println(listItem.getText());
+           }
+       }
         // Home, draw or away buttons
         List<WebElement> odds;
         // Randomly choose team and place multiple bets
@@ -140,22 +154,8 @@ public class SelectMultipleSoccerbets {
                     By.xpath("//div[contains(@class, 'notification') and contains(@class, 'show') and contains(@class, 'success')]//div[@class='title']"));
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(toast));
             Assert.assertTrue(toast.getText().contains("Bet Placement Successful"));
+
         }
-        //click Mybets button
-        betslipInfo.click();
-
-        //print successfull bets ID placed
-        List<WebElement> listItems = driver.findElements(By.className("bets"));
-        if (listItems.isEmpty()) {
-            System.out.println(" No successfull bets placed");
-        } else {
-
-            for (WebElement listItem : listItems) {
-                System.out.println("==============================");
-                System.out.println(listItem.getText());
-            }
-        }
-
     }
 
     @AfterTest

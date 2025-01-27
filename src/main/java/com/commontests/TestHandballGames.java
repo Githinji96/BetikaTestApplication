@@ -65,7 +65,9 @@ public class TestHandballGames {
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void selectSingleRandomBet() throws InterruptedException {
-       handballbtn.click();
+
+        js.executeScript("arguments[0].click()", handballbtn);
+
         try {
             js.executeScript("arguments[0].click()",upcomingmatches);
         } catch (NoSuchElementException e) {
@@ -87,4 +89,5 @@ public class TestHandballGames {
          System.out.println(printselectedOption.getText());
 
     }
+
 }

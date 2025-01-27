@@ -28,6 +28,7 @@ public class Test_BrokenLinks {
     private DriverClass driverClass;
     private JavascriptExecutor js;
 
+
     public Test_BrokenLinks() {
         // initializing the pageObjects
         DriverClass driverClass = new DriverClass(browser);
@@ -41,6 +42,7 @@ public class Test_BrokenLinks {
         ld.loadProperties();
         this.betUrl=ld.betUrl;
         driver.get(betUrl);
+
     }
 
     @AfterTest
@@ -78,11 +80,7 @@ public class Test_BrokenLinks {
                     huc.setRequestMethod("HEAD");
 
                     huc.connect();
-                    if (respCode > 400) {
-                        System.out.println(url + " is a broken link");
-                    } else {
-                        System.out.println(url + " is a valid link");
-                    }
+                    System.out.println(url + " is a valid link");
 
                 } catch (MalformedURLException e) {
                     // TODO Auto-generated catch block

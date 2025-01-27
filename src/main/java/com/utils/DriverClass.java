@@ -47,6 +47,7 @@ public class DriverClass {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
+
         js = (JavascriptExecutor) driver;
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

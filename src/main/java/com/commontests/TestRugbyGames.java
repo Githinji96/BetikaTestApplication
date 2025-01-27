@@ -34,7 +34,7 @@ public class TestRugbyGames {
     @FindBy(xpath="//span[@class='sports-list__item__label narrow'][normalize-space()='Rugby']")
     WebElement rugbybtn;
 
-    @FindBy(xpath = "//button[normalize-space()='See all upcoming aussie rules matches']")
+    @FindBy(xpath = "(//button[normalize-space()='See all upcoming rugby matches'])[1]")
     WebElement clickupcomingmatches;
 
     @FindAll(@FindBy(className = "prebet-match__odds"))
@@ -81,13 +81,13 @@ public class TestRugbyGames {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void selectRandomlyAussieGames(){
+    public void selectRandomlyRugbyGames(){
         rugbybtn.click();
 
         try {
             clickupcomingmatches.click();
         } catch (NoSuchElementException e) {
-            System.out.println("Upcoming matches button not found, proceeding with available matches.");
+
         }
         List<WebElement> odds;
         // Randomly choose team and place  bets

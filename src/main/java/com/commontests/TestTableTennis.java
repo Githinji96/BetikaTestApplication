@@ -30,6 +30,8 @@ public class TestTableTennis {
     @FindBy(xpath = "//span[normalize-space()='Table Tennis']")
     WebElement tennisbtn;
 
+    @FindAll(@FindBy(className = "prebet-match__odd-market__container"))
+    public List<WebElement> oddsContainer;
 
     @FindAll(@FindBy(className = "prebet-match__odds"))
     List<WebElement> teams;
@@ -81,6 +83,19 @@ public class TestTableTennis {
     public void PlacetestBoxingMatches() {
         tennisbtn.click();
 
+        List<WebElement> listItems = oddsContainer;
+
+        // Iterate through the list and print the text of each element
+        if (listItems.isEmpty()) {
+            System.out.println("No  matches Games Found");
+        } else {
+            // Iterate through the list and print market games and their odd values
+            for (WebElement listItem : listItems) {
+                System.out.println("============================================");
+                System.out.println(listItem.getText());
+            }
+        }
+
         List<WebElement> odds;
         // Randomly choose team and place multiple bets
         for (int i = 0; i <10; i++) {
@@ -92,6 +107,7 @@ public class TestTableTennis {
             System.out.println("Bet placed on odd index: " + randId);
 
         }
+
         System.out.println("Number of matches. " + teams.size());
         // get all matches selected
         for (WebElement listItem : roundedCard) {

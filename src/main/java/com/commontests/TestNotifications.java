@@ -68,6 +68,7 @@ public class TestNotifications {
         } else {
             // Iterate through the list and print the text of each element
             for (WebElement listItem : listItems) {
+
                 System.out.println(listItem.getText());
             }
         }

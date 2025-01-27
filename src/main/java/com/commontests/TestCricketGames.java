@@ -32,6 +32,8 @@ public class TestCricketGames {
     @FindBy(xpath= "//span[@class='sports-list__item__label narrow'][normalize-space()='Cricket']")
     WebElement cricketbtn;
 
+    @FindAll(@FindBy(className = "prebet-match__odd-market__container"))
+    public List<WebElement> oddsContainer;
 
     @FindAll(@FindBy(className = "prebet-match__odds"))
     List<WebElement> teams;
@@ -121,4 +123,20 @@ public class TestCricketGames {
         }
 
     }
+//    @Test
+//    public void printTeamsAndMarketOdds(){
+//        cricketbtn.click();
+//        List<WebElement> listItems = oddsContainer;
+//
+//        // Iterate throu    h the list and print the text of each element
+//        if (listItems.isEmpty()) {
+//            System.out.println("No  matches Games Found");
+//        } else {
+//            // Iterate through the list and print the text of each element
+//            for (WebElement listItem : listItems) {
+//                System.out.println("============================================");
+//                System.out.println(listItem.getText());
+//            }
+//        }
+//    }
 }

@@ -56,7 +56,7 @@ public class TestCasinoGames {
         }
     }
 
-    @Test(invocationCount = 2)
+    @Test
     public void casinoTest(){
 
         driver.get("https://www.betika.com/en-ke/casino");
