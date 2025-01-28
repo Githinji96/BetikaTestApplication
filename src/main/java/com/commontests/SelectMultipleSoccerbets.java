@@ -48,11 +48,6 @@ public class SelectMultipleSoccerbets {
     @FindBy(xpath = "//input[@placeholder='Enter stake']")
     WebElement enterAmt;
 
-    @FindBy(className = "stacked__details")
-    WebElement betslip;
-
-    @FindBy(className = "stacked__odd")
-    WebElement oddValue;
 
     @FindBy(className = "betslip__details__row__value")
     WebElement accountBalance;
@@ -64,9 +59,6 @@ public class SelectMultipleSoccerbets {
     @FindBy(className = "modal__x")
     WebElement cancelModal;
 
-    @FindBy(className = "nav__item__label")
-    WebElement betslipInfo;
-
 
     public SelectMultipleSoccerbets() {
 
@@ -77,7 +69,7 @@ public class SelectMultipleSoccerbets {
 
     }
 
-    @Test(retryAnalyzer = rerunFailedTestCases.class)
+    @Test
   @BeforeMethod
     public void login() throws UnhandledAlertException, IOException {
         loadProperty ld = new loadProperty();
@@ -92,20 +84,23 @@ public class SelectMultipleSoccerbets {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
 
     }
-   @Test
+   @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void TestSelectionOfMultipleSoccerGames() {
        List<WebElement> listItems = oddsContainer;
 
-       // Iterate through the list and print the text of each element
-       if (listItems.isEmpty()) {
-           System.out.println("No  matches Games Found");
-       } else {
            // Iterate through the list and print the text of each element
            for (WebElement listItem : listItems) {
                System.out.println("============================================");
-               System.out.println(listItem.getText());
+               String gamesList=listItem.getText();
+               if(gamesList.isEmpty()){
+                   System.out.println("No games added on the betslip");
+               }
+               else{
+                   System.out.println(gamesList);
+               }
+
            }
-       }
+
         // Home, draw or away buttons
         List<WebElement> odds;
         // Randomly choose team and place multiple bets

@@ -80,7 +80,7 @@ public class TestTableTennis {
     }
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void PlacetestBoxingMatches() {
+    public void PlacetestTableTennisMatches() {
         tennisbtn.click();
 
         List<WebElement> listItems = oddsContainer;
