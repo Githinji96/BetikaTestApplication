@@ -93,7 +93,7 @@ public class SelectMultipleSoccerbets {
                System.out.println("============================================");
                String gamesList=listItem.getText();
                if(gamesList.isEmpty()){
-                   System.out.println("No games added on the betslip");
+                   System.out.println("No games added found");
                }
                else{
                    System.out.println(gamesList);

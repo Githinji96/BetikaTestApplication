@@ -85,7 +85,7 @@ public class TestRugbyGames {
         rugbybtn.click();
 
         try {
-            clickupcomingmatches.click();
+            js.executeScript("arguments[0].click()",clickupcomingmatches);
         } catch (NoSuchElementException e) {
 
         }
