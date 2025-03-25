@@ -4,6 +4,7 @@ import com.PropertyData.loadProperty;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class Test_BoxingMatches {
 
     WebDriver driver;
@@ -152,7 +156,14 @@ public class Test_BoxingMatches {
                 System.out.println("Amount is less in the account to place a bet");
             }
         }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
 
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
+    }
     }
 
 

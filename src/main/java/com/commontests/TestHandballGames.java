@@ -4,10 +4,13 @@ import com.PropertyData.loadProperty;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -15,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class TestHandballGames {
     WebDriver driver;
     JavascriptExecutor js;
@@ -88,6 +92,14 @@ public class TestHandballGames {
         //get the randomly selected option bet
          System.out.println(printselectedOption.getText());
 
+    }
+    @AfterSuite
+    public void tearDown() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
     }
 
 }

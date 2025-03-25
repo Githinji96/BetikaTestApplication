@@ -4,12 +4,15 @@ import com.PropertyData.loadProperty;
 import com.loginpackage.AppLogin;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -18,6 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class Test_DisplayAndPlaceLiveGames {
     WebDriver driver;
     JavascriptExecutor js;
@@ -34,14 +38,14 @@ public class Test_DisplayAndPlaceLiveGames {
     @FindBy(xpath="//button[normalize-space()='Remove Expired']")
     WebElement expiredgames;
 
-    @FindBy(xpath="//button[normalize-space()='Accept and Place Bet']")
+    @FindBy(xpath="//button[contains(@class, 'account__payments__submit')]")
     WebElement acceptAndPlacebet;
 
     @FindAll(@FindBy(className = "stacked"))
     List<WebElement> listGames;
 
     public Test_DisplayAndPlaceLiveGames() {
-        driverClass = new DriverClass("firefox");
+        driverClass = new DriverClass();
         driver = driverClass.driver;
         js = driverClass.js;
         PageFactory.initElements(driver, this);
@@ -118,6 +122,14 @@ public class Test_DisplayAndPlaceLiveGames {
         }
         js.executeScript("arguments[0].click()",acceptAndPlacebet);
 
+    }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
     }
 
 }

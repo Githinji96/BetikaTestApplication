@@ -4,24 +4,23 @@ import com.PropertyData.loadProperty;
 import com.randompackage.GenerateRandomData;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.List;
 
-
+@Listeners(com.ListenersPackage.Listeners.class)
 public class RegisterUser {
     WebDriver driver;
     JavascriptExecutor js;
-    private String URL = "https://www.betika.com/en-ke";
+
 
     //register link
     @FindBy(linkText = "Register")
@@ -83,6 +82,14 @@ public class RegisterUser {
         js.executeScript("arguments[0].click()", acceptTerms);
         js.executeScript("arguments[0].click()", submitBtn);
 
+    }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
     }
 }
 

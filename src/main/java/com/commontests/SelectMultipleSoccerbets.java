@@ -7,6 +7,7 @@ import com.loginpackage.AppLogin;
 
 import com.utils.DriverClass;
 
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -14,9 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -24,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class SelectMultipleSoccerbets {
     WebDriver driver;
     JavascriptExecutor js;
@@ -69,7 +69,7 @@ public class SelectMultipleSoccerbets {
 
     }
 
-    @Test
+
   @BeforeMethod
     public void login() throws UnhandledAlertException, IOException {
         loadProperty ld = new loadProperty();
@@ -93,7 +93,7 @@ public class SelectMultipleSoccerbets {
                System.out.println("============================================");
                String gamesList=listItem.getText();
                if(gamesList.isEmpty()){
-                   System.out.println("No games added found");
+                   System.out.println("No games found");
                }
                else{
                    System.out.println(gamesList);
@@ -158,5 +158,13 @@ public class SelectMultipleSoccerbets {
        driver.quit();
         //driver = null;
 
+    }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
     }
 }

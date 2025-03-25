@@ -3,14 +3,13 @@ package com.commontests;
 import com.PropertyData.loadProperty;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -19,7 +18,7 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 
-
+@Listeners(com.ListenersPackage.Listeners.class)
 public class Test_BrokenLinks {
 
     public String betUrl;
@@ -91,5 +90,13 @@ public class Test_BrokenLinks {
                 }
             }
         }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
+    }
     }
 

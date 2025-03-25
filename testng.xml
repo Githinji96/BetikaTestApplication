@@ -3,7 +3,6 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="com.ListenersPackage.Listeners"/>
-        <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
         </listeners>
 
     <test verbose="2" preserve-order="true"
@@ -25,9 +24,9 @@
                 </methods>
 
             </class>
-            <class name="com.commontests.Test_BrokenLinks">
+            <class name="com.commontests.TestTableTennis">
                 <methods>
-                    <include name="testBrokenLinks"/>
+                    <include name="PlaceTableTennisMatches"/>
                 </methods>
             </class>
             <class name="com.commontests.Test_BoxingMatches">
@@ -35,9 +34,9 @@
                     <include name=" PlacementBoxingMatches"/>
                 </methods>
             </class>
-            <class name="com.commontests.TestNotifications">
+            <class name="com.commontests.TestCasinoGames">
                 <methods>
-                    <include name="notifications_Test"/>
+                    <include name="casinoTest"/>
                 </methods>
             </class>
             <class name="com.commontests.TestHandballGames">

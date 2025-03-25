@@ -3,12 +3,11 @@ package com.commontests;
 import com.PropertyData.loadProperty;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class TestCasinoGames {
     WebDriver driver;
     JavascriptExecutor js;
@@ -86,5 +86,13 @@ public class TestCasinoGames {
     @AfterMethod
     public void teardown(){
       //  driver.quit();
+    }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
     }
 }

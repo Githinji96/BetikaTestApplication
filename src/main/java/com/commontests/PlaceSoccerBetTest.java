@@ -4,6 +4,7 @@ import com.PropertyData.loadProperty;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.FindAll;
@@ -12,13 +13,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.io.IOException;
 import java.time.Duration;
 import java.util.*;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class PlaceSoccerBetTest {
 
     WebDriver driver;
@@ -222,7 +223,15 @@ public class PlaceSoccerBetTest {
     }
      @AfterTest
      public void closeBrowser(){
-        //driver.close();
+        driver.close();
      }
+    @AfterSuite
+    public void tearDown() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
+    }
 }
 

@@ -4,6 +4,7 @@ import com.PropertyData.loadProperty;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class TestCricketGames {
     WebDriver driver;
     JavascriptExecutor js;
@@ -125,7 +129,7 @@ public class TestCricketGames {
     }
     @Test
     public void printTeamsAndMarketOdds(){
-        cricketbtn.click();
+        js.executeScript("arguments[0].click()",cricketbtn);
         List<WebElement> listItems = oddsContainer;
 
         // Iterate throu    h the list and print the text of each element
@@ -138,5 +142,13 @@ public class TestCricketGames {
                 System.out.println(listItem.getText());
             }
         }
+    }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
     }
 }

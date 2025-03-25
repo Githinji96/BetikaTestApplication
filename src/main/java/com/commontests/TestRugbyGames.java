@@ -4,6 +4,7 @@ import com.PropertyData.loadProperty;
 import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
 import com.utils.DriverClass;
+import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Listeners(com.ListenersPackage.Listeners.class)
 public class TestRugbyGames {
 
     WebDriver driver;
@@ -82,7 +86,7 @@ public class TestRugbyGames {
     }
     @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void selectRandomlyRugbyGames(){
-        rugbybtn.click();
+        js.executeScript("arguments[0].click()",rugbybtn);
 
         try {
             js.executeScript("arguments[0].click()",clickupcomingmatches);
@@ -96,7 +100,7 @@ public class TestRugbyGames {
             odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
             int randId = (int) Math.floor(Math.random() * odds.size());
             js.executeScript("arguments[0].click()", odds.get(randId));
-            //print either homewin, draw or awaywin for the matches choosen
+            //print either homewin, draw or away win for the matches choosen
             System.out.println(randId);
         }
         System.out.println("Number of matches. " + teams.size());
@@ -129,5 +133,13 @@ public class TestRugbyGames {
         else{
             System.out.println("Amount is less in the account to place a bet");
         }
+    }
+    @AfterSuite
+    public void getReport() {
+        // Save the Extent Report
+        ExtentReportManager.getReportInstance().flush();
+
+        // Convert the HTML report to PDF
+        ExtentReportManager.convertHtmlToPdf();
     }
 }

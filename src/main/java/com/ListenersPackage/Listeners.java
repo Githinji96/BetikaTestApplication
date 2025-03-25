@@ -1,64 +1,42 @@
 package com.ListenersPackage;
 
-import com.utils.DriverClass;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.utils.ExtentReportManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.io.IOException;
 
-public class Listeners extends DriverClass implements ITestListener {
-    DriverClass scrn;
+public class Listeners implements ITestListener {
+    private static ExtentReports extent = ExtentReportManager.getReportInstance();
+    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+
+    @Override
     public void onTestStart(ITestResult result) {
-      System.out.println("Test Case execution is starting");
+        ExtentTest test = extent.createTest(result.getMethod().getMethodName());
+        extentTest.set(test);
     }
 
-    // This method is invoked when a test case succeeds.
     @Override
     public void onTestSuccess(ITestResult result) {
-
+        extentTest.get().log(Status.PASS, "Test Passed: " + result.getMethod().getMethodName());
     }
 
-    // This method is invoked when a test case fails.
     @Override
     public void onTestFailure(ITestResult result) {
-
-        System.out.println("Test case failed");
-        try {
-            takeScreenshot(result.getMethod().getMethodName()+" .jpg");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+        extentTest.get().log(Status.FAIL, "Test Failed: " + result.getMethod().getMethodName());
+        extentTest.get().log(Status.FAIL, result.getThrowable().getMessage());
     }
 
-    // This method is invoked when a test case is skipped.
     @Override
     public void onTestSkipped(ITestResult result) {
-
+        extentTest.get().log(Status.SKIP, "Test Skipped: " + result.getMethod().getMethodName());
     }
 
-    // This method is invoked when a test case fails but within the success percentage.
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
-    }
-
-    // This method is invoked when a test case fails and is marked as a "failed" retry.
-   @Override
-    public void onTestFailedWithTimeout(ITestResult result) {
-
-    }
-
-    // This method is invoked before the start of any test cases in a test tag in a testng.xml file.
-    @Override
-    public void onStart(ITestContext context) {
-
-    }
-
-    // This method is invoked after all the test cases in a test tag in a testng.xml file have been run.
     @Override
     public void onFinish(ITestContext context) {
-
+        extent.flush(); // Write report to file
     }
 }
