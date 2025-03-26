@@ -20,7 +20,7 @@ import java.time.Duration;
 import java.util.*;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class PlaceSoccerBetTest {
+public class PlaceSingleSoccerBetTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -83,7 +83,7 @@ public class PlaceSoccerBetTest {
 
 
     // Class constructor
-    public PlaceSoccerBetTest() {
+    public PlaceSingleSoccerBetTest() {
         // initializing the pageObjects
         driverClass = new DriverClass("chrome");
         driver = driverClass.driver;

@@ -13,16 +13,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestNotifications {
+public class TestNotificationsTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -35,7 +32,7 @@ public class TestNotifications {
     @FindBy(xpath="//button[@class='user-notifications__toggle']//span[@class='visible-desktop'][normalize-space()='Notifications']")
     WebElement notification;
     // Class constructor
-    public TestNotifications() {
+    public TestNotificationsTest() {
         // initializing the pageObjects
         driverClass = new DriverClass("firefox");
         driver = driverClass.driver;

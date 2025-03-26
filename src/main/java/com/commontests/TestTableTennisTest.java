@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestTableTennis {
+public class TestTableTennisTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -54,7 +54,7 @@ public class TestTableTennis {
 
 
     // Class constructor
-    public TestTableTennis() {
+    public TestTableTennisTest() {
         // initializing the pageObjects
         driverClass = new DriverClass();
         driver = driverClass.driver;

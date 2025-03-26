@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestRugbyGames {
+public class TestRugbyGamesTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -60,7 +60,7 @@ public class TestRugbyGames {
     WebElement submit;
 
 
-    public TestRugbyGames(){
+    public TestRugbyGamesTest(){
 
             // initializing the pageObjects
             driverClass = new DriverClass("edge");

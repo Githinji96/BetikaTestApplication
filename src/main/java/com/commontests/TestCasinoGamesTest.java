@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestCasinoGames {
+public class TestCasinoGamesTest {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -25,7 +25,7 @@ public class TestCasinoGames {
     public String usernumber;
     public String password;
 
-    public TestCasinoGames() {
+    public TestCasinoGamesTest() {
         // initializing the pageObjects
         driverClass = new DriverClass("edge");
         driver = driverClass.driver;

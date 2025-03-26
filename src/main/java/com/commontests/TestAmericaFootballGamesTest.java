@@ -1,8 +1,8 @@
 package com.commontests;
 
 import com.PropertyData.loadProperty;
-import com.reRunFailedTests.rerunFailedTestCases;
 import com.loginpackage.AppLogin;
+import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
 import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestHandballGames {
+public class TestAmericaFootballGamesTest {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -28,11 +28,10 @@ public class TestHandballGames {
     public String usernumber;
     public String password;
 
+    @FindBy(xpath="//span[@class='sports-list__item__label narrow' and text()='American Football']")
+    WebElement americanftball;
 
-    @FindBy(xpath = "//span[contains(@class, 'sports-list__item__label') and text()='Handball']")
-    WebElement handballbtn;
-
-    @FindBy(xpath="//button[normalize-space()='See all upcoming handball matches']")
+    @FindBy(xpath="//button[normalize-space()='See all upcoming american football matches']")
     WebElement upcomingmatches;
 
     @FindBy(xpath="//a[@class='prebet-match__markets'][1]")
@@ -41,17 +40,17 @@ public class TestHandballGames {
     @FindBy(className = "stacked__details")
     WebElement printselectedOption;
 
-    public TestHandballGames(){
+    public TestAmericaFootballGamesTest() {
         // initializing the pageObjects
-        driverClass = new DriverClass("edge");
+        driverClass = new DriverClass("chrome");
         driver = driverClass.driver;
-        js = driverClass.js;//
+        js = driverClass.js;
         PageFactory.initElements(driver, this);
     }
 
     @BeforeMethod
-    private void login() {
-        loadProperty ld= new loadProperty();
+    public void login() {
+        loadProperty ld = new loadProperty();
         try {
             ld.loadProperties();
         } catch (IOException e) {
@@ -64,42 +63,39 @@ public class TestHandballGames {
 
         AppLogin lg = new AppLogin();
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
-
     }
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void selectSingleRandomBet() throws InterruptedException {
-
-        js.executeScript("arguments[0].click()", handballbtn);
-
+    public void TestAmericanFootballGames() {
         try {
-            js.executeScript("arguments[0].click()",upcomingmatches);
+            js.executeScript("arguments[0].click()", americanftball);
+            js.executeScript("arguments[0].click()", upcomingmatches);
+            clickmarkets.click();
+            // Select and place random market in one single game
+            List<WebElement> options = driver.findElements(By.className("market__odds"));
+
+            if (options.isEmpty()) {
+                System.out.println("American Football games not found.");
+                return;
+            }
+
+            int rSize = (int) Math.floor(Math.random() * options.size());
+            List<WebElement> oddButtons = options.get(rSize).findElements(By.className("odd"));
+
+            js.executeScript("arguments[0].click()", oddButtons.get((int) Math.floor(Math.random() * oddButtons.size())));
+            // Get the randomly selected option bet
+            System.out.println(printselectedOption.getText());
         } catch (NoSuchElementException e) {
-            System.out.println("Upcoming matches button not found, proceeding with available matches.");
+            System.out.println("American Football games not found.");
         }
-        clickmarkets.click();
-
-        List<WebElement> options = driver.findElements(By.className("market__odds"));
-
-        int rSize = (int) Math.floor(Math.random()*options.size());
-
-        List<WebElement> oddButtons = options.get(rSize)
-                .findElements(By.className("odd"));
-
-        js.executeScript("arguments[0].click()",
-               oddButtons.get((int) Math.floor(Math.random()*oddButtons.size()))
-        );
-        //get the randomly selected option bet
-         System.out.println(printselectedOption.getText());
-
     }
+
     @AfterSuite
-    public void tearDown() {
+    public void getReport() {
         // Save the Extent Report
         ExtentReportManager.getReportInstance().flush();
 
         // Convert the HTML report to PDF
         ExtentReportManager.convertHtmlToPdf();
     }
-
 }

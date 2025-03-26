@@ -2,7 +2,6 @@ package com.commontests;
 
 import com.PropertyData.loadProperty;
 import com.randompackage.GenerateRandomData;
-import com.reRunFailedTests.rerunFailedTestCases;
 import com.utils.DriverClass;
 import com.utils.ExtentReportManager;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class RegisterUser {
+public class RegisterUserTest {
     WebDriver driver;
     JavascriptExecutor js;
 
@@ -45,7 +44,7 @@ public class RegisterUser {
     private final DriverClass driverClass;
     private String betUrl;
 
-    public RegisterUser() {
+    public RegisterUserTest() {
 
         driverClass = new DriverClass("edge");
         driver = driverClass.driver;

@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class Test_BoxingMatches {
+public class BoxingMatchesTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -59,7 +59,7 @@ public class Test_BoxingMatches {
     WebElement enterAmt;
 
     // Class constructor
-    public Test_BoxingMatches() {
+    public BoxingMatchesTest() {
         // initializing the pageObjects
         driverClass = new DriverClass();
         driver = driverClass.driver;

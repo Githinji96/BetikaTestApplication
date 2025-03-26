@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class Test_BrokenLinks {
+public class Test_BrokenLinksTest {
 
     public String betUrl;
     String browser = "chrome";
@@ -28,7 +28,7 @@ public class Test_BrokenLinks {
     private JavascriptExecutor js;
 
 
-    public Test_BrokenLinks() {
+    public Test_BrokenLinksTest() {
         // initializing the pageObjects
         DriverClass driverClass = new DriverClass(browser);
         driver = driverClass.driver;

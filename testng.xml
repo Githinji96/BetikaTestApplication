@@ -8,38 +8,38 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication">
         <classes>
-            <class name="com.commontests.PlaceSoccerBetTest">
+            <class name="com.commontests.PlaceSingleSoccerBetTest">
                 <methods>
                    <include name="placebet"/>
                 </methods>
             </class>
-            <class name="com.commontests.RegisterUser">
+            <class name="com.commontests.RegisterUserTest">
                 <methods>
                     <include name="registeruser"/>
                 </methods>
             </class>
-            <class name="com.commontests.SelectMultipleSoccerbets">
+            <class name="com.commontests.SelectMultipleSoccerbetsTest">
                 <methods>
                     <include name="SelectMultipleSoccerbets"/>
                 </methods>
 
             </class>
-            <class name="com.commontests.TestTableTennis">
+            <class name="com.commontests.TestTableTennisTest">
                 <methods>
                     <include name="PlaceTableTennisMatches"/>
                 </methods>
             </class>
-            <class name="com.commontests.Test_BoxingMatches">
+            <class name="com.commontests.BoxingMatchesTest">
                 <methods>
                     <include name=" PlacementBoxingMatches"/>
                 </methods>
             </class>
-            <class name="com.commontests.TestCasinoGames">
+            <class name="com.commontests.TestCasinoGamesTest">
                 <methods>
                     <include name="casinoTest"/>
                 </methods>
             </class>
-            <class name="com.commontests.TestHandballGames">
+            <class name="com.commontests.TestHandballGamesTest">
                 <methods>
                     <include name="selectSingleRandomBet"/>
                 </methods>

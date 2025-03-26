@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class Test_DisplayAndPlaceLiveGames {
+public class Test_DisplayAndPlaceLiveGamesTest {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -44,7 +44,7 @@ public class Test_DisplayAndPlaceLiveGames {
     @FindAll(@FindBy(className = "stacked"))
     List<WebElement> listGames;
 
-    public Test_DisplayAndPlaceLiveGames() {
+    public Test_DisplayAndPlaceLiveGamesTest() {
         driverClass = new DriverClass();
         driver = driverClass.driver;
         js = driverClass.js;
