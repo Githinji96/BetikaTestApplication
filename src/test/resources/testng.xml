@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.ListenersPackage.Listeners"/>
+        <listener class-name="org.testng.reporters.XMLReporter"/>
+        </listeners>
+
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication">
+        <classes>
+            <class name="com.commontests.PlaceSingleSoccerBetTest">
+                <methods>
+                   <include name="placebet"/>
+                </methods>
+            </class>
+            <class name="com.commontests.RegisterUserTest">
+                <methods>
+                    <include name="registeruser"/>
+                </methods>
+            </class>
+            <class name="com.commontests.SelectMultipleSoccerbetsTest">
+                <methods>
+                    <include name="SelectMultipleSoccerbets"/>
+                </methods>
+
+            </class>
+            <class name="com.commontests.TestTableTennisTest">
+                <methods>
+                    <include name="PlaceTableTennisMatches"/>
+                </methods>
+            </class>
+            <class name="com.commontests.BoxingMatchesTest">
+                <methods>
+                    <include name=" PlacementBoxingMatches"/>
+                </methods>
+            </class>
+            <class name="com.commontests.TestCasinoGamesTest">
+                <methods>
+                    <include name="casinoTest"/>
+                </methods>
+            </class>
+            <class name="com.commontests.TestHandballGamesTest">
+                <methods>
+                    <include name="selectSingleRandomBet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

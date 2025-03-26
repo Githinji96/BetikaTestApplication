@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="4" total="8" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-26T16:10:59 EAT" name="All Test Suite" finished-at="2025-03-26T16:13:02 EAT" duration-ms="122479">
+    <groups>
+    </groups>
+    <test started-at="2025-03-26T16:10:59 EAT" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication" finished-at="2025-03-26T16:13:02 EAT" duration-ms="122479">
+      <class name="com.commontests.TestTableTennisTest">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:11:44 EAT" name="login" finished-at="2025-03-26T16:11:55 EAT" duration-ms="10562" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="PlaceTableTennisMatches()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:11:55 EAT" name="PlaceTableTennisMatches" finished-at="2025-03-26T16:12:04 EAT" duration-ms="9666" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlaceTableTennisMatches -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:13:02 EAT" name="teardown" finished-at="2025-03-26T16:13:02 EAT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:13:26 EAT" name="getReport" finished-at="2025-03-26T16:13:28 EAT" duration-ms="2348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.TestTableTennisTest -->
+      <class name="com.commontests.BoxingMatchesTest">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.BoxingMatchesTest@51841ac6]" started-at="2025-03-26T16:13:03 EAT" name="getReport" finished-at="2025-03-26T16:13:11 EAT" duration-ms="7591" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.BoxingMatchesTest -->
+      <class name="com.commontests.TestHandballGamesTest">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TestHandballGamesTest@44cffc25]" started-at="2025-03-26T16:12:21 EAT" name="login" finished-at="2025-03-26T16:12:36 EAT" duration-ms="14933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="selectSingleRandomBet()[pri:0, instance:com.commontests.TestHandballGamesTest@44cffc25]" started-at="2025-03-26T16:12:36 EAT" name="selectSingleRandomBet" finished-at="2025-03-26T16:12:58 EAT" duration-ms="21604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectSingleRandomBet -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.TestHandballGamesTest@44cffc25]" started-at="2025-03-26T16:13:23 EAT" name="tearDown" finished-at="2025-03-26T16:13:26 EAT" duration-ms="2879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.commontests.TestHandballGamesTest -->
+      <class name="com.commontests.TestCasinoGamesTest">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:12:04 EAT" name="login" finished-at="2025-03-26T16:12:15 EAT" duration-ms="11260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="casinoTest()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:12:15 EAT" name="casinoTest" finished-at="2025-03-26T16:12:21 EAT" duration-ms="5561" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- casinoTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:12:21 EAT" name="teardown" finished-at="2025-03-26T16:12:21 EAT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:13:20 EAT" name="getReport" finished-at="2025-03-26T16:13:23 EAT" duration-ms="2916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.TestCasinoGamesTest -->
+      <class name="com.commontests.RegisterUserTest">
+        <test-method is-config="true" signature="visitUrl()[pri:0, instance:com.commontests.RegisterUserTest@213c3543]" started-at="2025-03-26T16:11:25 EAT" name="visitUrl" finished-at="2025-03-26T16:11:39 EAT" duration-ms="14330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- visitUrl -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.RegisterUserTest@213c3543]" started-at="2025-03-26T16:12:58 EAT" name="tearDown" finished-at="2025-03-26T16:13:01 EAT" duration-ms="3076" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.RegisterUserTest@213c3543]" started-at="2025-03-26T16:13:14 EAT" name="getReport" finished-at="2025-03-26T16:13:17 EAT" duration-ms="3127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.RegisterUserTest -->
+      <class name="com.commontests.SelectMultipleSoccerbetsTest">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@75fc1992]" started-at="2025-03-26T16:13:01 EAT" name="tearDown" finished-at="2025-03-26T16:13:02 EAT" duration-ms="494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@75fc1992]" started-at="2025-03-26T16:13:17 EAT" name="getReport" finished-at="2025-03-26T16:13:20 EAT" duration-ms="3217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.SelectMultipleSoccerbetsTest -->
+      <class name="com.commontests.PlaceSingleSoccerBetTest">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:11:00 EAT" name="login" finished-at="2025-03-26T16:11:25 EAT" duration-ms="25080" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:11:39 EAT" name="placebet" finished-at="2025-03-26T16:11:44 EAT" duration-ms="4948" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placebet -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:12:58 EAT" name="closeBrowser" finished-at="2025-03-26T16:12:58 EAT" duration-ms="856" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:13:11 EAT" name="tearDown" finished-at="2025-03-26T16:13:14 EAT" duration-ms="3015" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.commontests.PlaceSingleSoccerBetTest -->
+    </test> <!-- C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication -->
+  </suite> <!-- All Test Suite -->
+</testng-results>
