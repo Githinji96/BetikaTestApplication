@@ -3,6 +3,7 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="com.ListenersPackage.Listeners"/>
+        <listener class-name="org.testng.reporters.XMLReporter"/>
         </listeners>
 
     <test verbose="2" preserve-order="true"
