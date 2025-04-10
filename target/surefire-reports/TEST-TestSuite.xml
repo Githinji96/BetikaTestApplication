@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="4,338.505" tests="8" errors="0" skipped="4" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="2,911.328" tests="8" errors="0" skipped="4" failures="1">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="webdriver.chrome.driver" value="C:\WINDOWS\system32\config\systemprofile\.cache\selenium\chromedriver\win64\134.0.6998.165\chromedriver.exe"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Windows\Temp\surefire3746467364871072232\surefirebooter-20250409161354072_3.jar C:\Windows\Temp\surefire3746467364871072232 2025-04-09T16-13-53_271-jvmRun1 surefire-20250409161354072_1tmp surefire_0-20250409161354072_2tmp"/>
+    <property name="sun.java.command" value="C:\Windows\Temp\surefire12326790055752661567\surefirebooter-20250410111828396_3.jar C:\Windows\Temp\surefire12326790055752661567 2025-04-10T11-18-27_548-jvmRun1 surefire-20250410111828396_1tmp surefire_0-20250410111828396_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\User\eclipse-workspace\BetikaTestApplication\target\test-classes;C:\Users\User\eclipse-workspace\BetikaTestApplication\target\classes;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-java\4.20.0\selenium-java-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-api\4.20.0\selenium-api-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.20.0\selenium-chrome-driver-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.20.0\selenium-chromium-driver-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-json\4.20.0\selenium-json-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.20.0\selenium-manager-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.20.0\selenium-devtools-v122-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.20.0\selenium-devtools-v123-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.20.0\selenium-devtools-v124-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.20.0\selenium-devtools-v85-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.20.0\selenium-edge-driver-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.20.0\selenium-firefox-driver-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-http\4.20.0\selenium-http-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.20.0\selenium-ie-driver-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.20.0\selenium-remote-driver-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\guava\guava\33.1.0-jre\guava-33.1.0-jre.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-api\1.37.0\opentelemetry-api-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-context\1.37.0\opentelemetry-context-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.37.0\opentelemetry-exporter-logging-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.37.0\opentelemetry-sdk-common-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.37.0\opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.37.0\opentelemetry-sdk-extension-autoconfigure-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.37.0-alpha\opentelemetry-api-incubator-1.37.0-alpha.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.37.0\opentelemetry-sdk-trace-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.37.0\opentelemetry-sdk-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.37.0\opentelemetry-sdk-metrics-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.37.0\opentelemetry-sdk-logs-1.37.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\net\bytebuddy\byte-buddy\1.14.14\byte-buddy-1.14.14.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-os\4.20.0\selenium-os-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.20.0\selenium-safari-driver-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\seleniumhq\selenium\selenium-support\4.20.0\selenium-support-4.20.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\slf4j\slf4j-api\2.1.0-alpha1\slf4j-api-2.1.0-alpha1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\slf4j\slf4j-nop\2.1.0-alpha1\slf4j-nop-2.1.0-alpha1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\testng\testng\7.6.1\testng-7.6.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\webjars\jquery\3.6.0\jquery-3.6.0.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\aventstack\extentreports\5.0.9\extentreports-5.0.9.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\io\reactivex\rxjava3\rxjava\3.0.4\rxjava-3.0.4.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\freemarker\freemarker\2.3.30\freemarker-2.3.30.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\itextpdf\5.5.13.4\itextpdf-5.5.13.4.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\html2pdf\4.0.3\html2pdf-4.0.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\forms\7.2.3\forms-7.2.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\kernel\7.2.3\kernel-7.2.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\io\7.2.3\io-7.2.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\commons\7.2.3\commons-7.2.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.70\bcpkix-jdk15on-1.70.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\bouncycastle\bcutil-jdk15on\1.70\bcutil-jdk15on-1.70.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.70\bcprov-jdk15on-1.70.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\layout\7.2.3\layout-7.2.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\svg\7.2.3\svg-7.2.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\com\itextpdf\styled-xml-parser\7.2.3\styled-xml-parser-7.2.3.jar;C:\WINDOWS\system32\config\systemprofile\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Windows\Temp\surefire3746467364871072232\surefirebooter-20250409161354072_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Windows\Temp\surefire12326790055752661567\surefirebooter-20250410111828396_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17+35-LTS-2724"/>
@@ -70,37 +70,37 @@ Initializing WebDriver...
 Soccer Betting | Football Betting Odds | Betika
 ]]></system-out>
     <system-err><![CDATA[SLF4J(I): Connected with provider of type [org.slf4j.nop.NOPServiceProvider]
-Apr 09, 2025 4:14:05 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:18:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:14:06 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:18:42 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Apr 09, 2025 4:14:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:18:45 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:14:08 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:18:45 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Apr 09, 2025 4:14:10 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:18:50 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:14:10 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:18:50 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Apr 09, 2025 4:14:27 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:19:11 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:14:27 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:19:11 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Apr 09, 2025 4:15:09 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:19:50 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:15:09 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:19:50 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Apr 09, 2025 4:15:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:20:05 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:15:23 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:20:05 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Apr 09, 2025 4:15:41 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:20:15 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:15:41 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:20:15 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Apr 09, 2025 4:15:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 10, 2025 11:20:33 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 134
-Apr 09, 2025 4:15:57 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 10, 2025 11:20:33 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
@@ -119,7 +119,7 @@ WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need t
     <system-out><![CDATA[Soccer Betting | Football Betting Odds | Betika
 ]]></system-out>
   </testcase>
-  <testcase name="placebet" classname="com.commontests.PlaceSingleSoccerBetTest" time="0.091">
+  <testcase name="placebet" classname="com.commontests.PlaceSingleSoccerBetTest" time="0.059">
     <failure message="Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -163,101 +163,102 @@ WARNING: Unable to find version of CDP to use for 134.0.6998.178. You may need t
     <system-out><![CDATA[Soccer Betting | Football Betting Odds | Betika
 ]]></system-out>
   </testcase>
-  <testcase name="verifyMyBets" classname="com.commontests.PlaceSingleSoccerBetTest" time="14.535">
-    <system-out><![CDATA[Screenshot saved: C:\Users\User\eclipse-workspace\BetikaTestApplication\screenshots\placebet_20250409_161608.png
+  <testcase name="verifyMyBets" classname="com.commontests.PlaceSingleSoccerBetTest" time="14.676">
+    <system-out><![CDATA[Screenshot saved: C:\Users\User\eclipse-workspace\BetikaTestApplication\screenshots\placebet_20250410_112048.png
 ====================
 No Placed bets ID found.
 ]]></system-out>
   </testcase>
-  <testcase name="PlaceTableTennisMatches" classname="com.commontests.TableTennisTest" time="13.111">
+  <testcase name="PlaceTableTennisMatches" classname="com.commontests.TableTennisTest" time="9.192">
     <system-out><![CDATA[============================================
-Vodal, Petr
-Zelezny, Daniel
-1.97
-1.75
+Fiklik, Ondrej
+Dobias, Ladislav
+2.00
+1.73
 ============================================
-Kotyl, Krzysztof
-Dabrowski, Igor
-1.50
-2.41
-============================================
-Kaczmarek, Jakub
-Baron, Mariusz
-2.55
-1.46
-============================================
-Wloczko, Krzyszto...
-Balcerzak, Marcin...
-1.16
-4.60
-============================================
+Felkel, Grzegorz
 Grela, Artur
-Petas, Kacper
-1.85
-1.85
+-
+-
+-
 ============================================
-Sulkowski, Karol
-Drozdz, Dariusz
-1.83
-1.87
+Warpas, Blazej
+Sulkowski, Bartos...
+2.15
+1.63
 ============================================
-Mugowski, Arkadiu...
-Filbrandt, Tomasz...
-3.95
-1.21
+Zuzanek, Jiri
+Hlawatschke, Ales...
+1.73
+2.00
 ============================================
-Adamus, Mariusz
-Pruszkowski, Jaku...
-2.12
+Kubat, Vladimir
+Vrba, Jindrich
+2.11
 1.65
 ============================================
-Kriz, Jaromir
-Manhal Jr, Jan
-1.66
-2.09
+Pleskot, Jan
+Hruska, Vaclav Se...
+1.32
+3.15
 ============================================
-Bradac, Petr
-Petracek, Vratisl...
-1.19
-4.10
+Koutnik, Josef
+Stehlik, Milan
+1.40
+2.75
+============================================
+Koloidenko, Pylyp...
+Brnovic, Boris
+1.38
+2.65
+============================================
+Sulkowski, Karol
+Stapor Rafal
+2.12
+1.64
+============================================
+Glanowski, Jakub
+Kotyl, Krzysztof
+1.40
+2.75
 Bet placed on odd index: 1
 Bet placed on odd index: 0
 Bet placed on odd index: 0
+Bet placed on odd index: 2
 Bet placed on odd index: 1
+Bet placed on odd index: 1
+Bet placed on odd index: 1
+Bet placed on odd index: 2
 Bet placed on odd index: 0
 Bet placed on odd index: 0
-Bet placed on odd index: 1
-Bet placed on odd index: 1
-Bet placed on odd index: 1
-Bet placed on odd index: 1
-Number of matches. 12
-Wloczko, Krzysztof Vs. Balcerzak, Marcin
-WINNER • Balcerzak, Marcin
-Starts 09/04, 16:35
-4.60
-Vodal, Petr Vs. Zelezny, Daniel
-WINNER • Vodal, Petr
-Starts 09/04, 16:25
-1.97
-Mugowski, Arkadiusz Vs. Filbrandt, Tomasz
-WINNER • Filbrandt, Tomasz
-Starts 09/04, 16:55
-1.21
-Grela, Artur Vs. Petas, Kacper
-WINNER • Grela, Artur
-Starts 09/04, 16:40
-1.85
-Kriz, Jaromir Vs. Manhal Jr, Jan
-WINNER • Manhal Jr, Jan
-Starts 09/04, 17:00
-2.09
-Bradac, Petr Vs. Petracek, Vratislav
-WINNER • Petracek, Vratislav
-Starts 09/04, 17:00
-4.10
+Number of matches. 15
+Koutnik, Josef Vs. Stehlik, Milan
+WINNER • Stehlik, Milan
+Starts 10/04, 11:30
+2.75
+Kukawka, Milosz Vs. Warpas, Blazej
+WINNER • Warpas, Blazej
+Starts 10/04, 12:30
+1.96
+Zuzanek, Jiri Vs. Hlawatschke, Ales
+WINNER • Hlawatschke, Ales
+Starts 10/04, 11:30
+2.00
+Warpas, Blazej Vs. Sulkowski, Bartosz
+WINNER • Sulkowski, Bartosz
+Starts 10/04, 11:30
+1.63
+Pleskot, Jan Vs. Hruska, Vaclav Senior
+WINNER • Pleskot, Jan
+Starts 10/04, 11:30
+1.32
+Longin, Milan Vs. Bartunek, Radek
+WINNER • Longin, Milan
+Starts 10/04, 19:30
+1.49
 ]]></system-out>
   </testcase>
-  <testcase name="casinoTest" classname="com.commontests.CasinoGamesTest" time="15.41">
+  <testcase name="casinoTest" classname="com.commontests.CasinoGamesTest" time="6.469">
     <system-out><![CDATA[============================================
 Aztec Gems
 Extra Juicy

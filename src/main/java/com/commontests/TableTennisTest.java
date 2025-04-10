@@ -87,7 +87,7 @@ public class TableTennisTest {
     }
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void PlaceTableTennisMatches() {
+    public void placeTableTennisMatches() {
         js.executeScript("arguments[0].click()",tennisbtn);
 
         List<WebElement> listItems = oddsContainer;

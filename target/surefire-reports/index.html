@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-All_Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">All Test Suite</span>
+              <span class="suite-name border-failed">All Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,50 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,  4 skipped,  3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-All_Test_Suite" class="hide-methods failed suite-All_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-All_Test_Suite -->
+                      <a href="#" panel-name="suite-All_Test_Suite" class="show-methods failed suite-All_Test_Suite"> (show)</a> <!-- show-methods failed suite-All_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-All_Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.PlaceSingleSoccerBetTest" class="method navigator-link" hash-for-method="placebet">placebet</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-All_Test_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Retried methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-All_Test_Suite" class="hide-methods skipped suite-All_Test_Suite"> (hide)</a> <!-- hide-methods skipped suite-All_Test_Suite -->
+                      <a href="#" panel-name="suite-All_Test_Suite" class="show-methods skipped suite-All_Test_Suite"> (show)</a> <!-- show-methods skipped suite-All_Test_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-All_Test_Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.PlaceSingleSoccerBetTest" class="method navigator-link" hash-for-method="placebet">placebet</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.PlaceSingleSoccerBetTest" class="method navigator-link" hash-for-method="placebet">placebet</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.PlaceSingleSoccerBetTest" class="method navigator-link" hash-for-method="placebet">placebet</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.PlaceSingleSoccerBetTest" class="method navigator-link" hash-for-method="placebet">placebet</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-All_Test_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -113,16 +156,6 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.PlaceSingleSoccerBetTest" class="method navigator-link" hash-for-method="placebet">placebet</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.HandballGamesTest" class="method navigator-link" hash-for-method="selectSingleRandomBet">selectSingleRandomBet</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-All_Test_Suite" title="com.commontests.PlaceSingleSoccerBetTest" class="method navigator-link" hash-for-method="verifyMyBets">verifyMyBets</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -138,6 +171,277 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-All_Test_Suite" class="panel All_Test_Suite">
+          <div class="suite-All_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.commontests.PlaceSingleSoccerBetTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="placebet">
+                  </a> <!-- placebet -->
+                  <span class="method-name">placebet</span>
+                  <div class="stack-trace">java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-All_Test_Suite-class-failed -->
+          <div class="suite-All_Test_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.commontests.PlaceSingleSoccerBetTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="placebet">
+                  </a> <!-- placebet -->
+                  <span class="method-name">placebet</span>
+                  <div class="stack-trace">java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="placebet">
+                  </a> <!-- placebet -->
+                  <span class="method-name">placebet</span>
+                  <div class="stack-trace">java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="placebet">
+                  </a> <!-- placebet -->
+                  <span class="method-name">placebet</span>
+                  <div class="stack-trace">java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="placebet">
+                  </a> <!-- placebet -->
+                  <span class="method-name">placebet</span>
+                  <div class="stack-trace">java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-All_Test_Suite-class-skipped -->
+          <div class="suite-All_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.commontests.PlaceSingleSoccerBetTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMyBets">
+                  </a> <!-- verifyMyBets -->
+                  <span class="method-name">verifyMyBets</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-All_Test_Suite-class-passed -->
           <div class="suite-All_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -164,43 +468,6 @@
                   <a name="casinoTest">
                   </a> <!-- casinoTest -->
                   <span class="method-name">casinoTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-All_Test_Suite-class-passed -->
-          <div class="suite-All_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.commontests.HandballGamesTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="selectSingleRandomBet">
-                  </a> <!-- selectSingleRandomBet -->
-                  <span class="method-name">selectSingleRandomBet</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-All_Test_Suite-class-passed -->
-          <div class="suite-All_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.commontests.PlaceSingleSoccerBetTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="placebet">
-                  </a> <!-- placebet -->
-                  <span class="method-name">placebet</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyMyBets">
-                  </a> <!-- verifyMyBets -->
-                  <span class="method-name">verifyMyBets</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -296,32 +563,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'selectSingleRandomBet')
-data.setCell(0, 2, 'com.commontests.HandballGamesTest')
-data.setCell(0, 3, 16268);
+data.setCell(0, 1, 'verifyMyBets')
+data.setCell(0, 2, 'com.commontests.PlaceSingleSoccerBetTest')
+data.setCell(0, 3, 14708);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyMyBets')
-data.setCell(1, 2, 'com.commontests.PlaceSingleSoccerBetTest')
-data.setCell(1, 3, 14880);
+data.setCell(1, 1, 'PlaceTableTennisMatches')
+data.setCell(1, 2, 'com.commontests.TableTennisTest')
+data.setCell(1, 3, 9192);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'placebet')
-data.setCell(2, 2, 'com.commontests.PlaceSingleSoccerBetTest')
-data.setCell(2, 3, 7513);
+data.setCell(2, 1, 'casinoTest')
+data.setCell(2, 2, 'com.commontests.CasinoGamesTest')
+data.setCell(2, 3, 6469);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'PlaceTableTennisMatches')
-data.setCell(3, 2, 'com.commontests.TableTennisTest')
-data.setCell(3, 3, 7286);
+data.setCell(3, 1, 'placebet')
+data.setCell(3, 2, 'com.commontests.PlaceSingleSoccerBetTest')
+data.setCell(3, 3, 198);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'casinoTest')
-data.setCell(4, 2, 'com.commontests.CasinoGamesTest')
-data.setCell(4, 3, 6123);
+data.setCell(4, 1, 'placebet')
+data.setCell(4, 2, 'com.commontests.PlaceSingleSoccerBetTest')
+data.setCell(4, 3, 167);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'placebet')
+data.setCell(5, 2, 'com.commontests.PlaceSingleSoccerBetTest')
+data.setCell(5, 3, 77);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'placebet')
+data.setCell(6, 2, 'com.commontests.PlaceSingleSoccerBetTest')
+data.setCell(6, 3, 29);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'placebet')
+data.setCell(7, 2, 'com.commontests.PlaceSingleSoccerBetTest')
+data.setCell(7, 3, 21);
 window.suiteTableData['All_Test_Suite']= { tableData: data, tableDiv: 'times-div-All_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 52 seconds</span>
+              <span class="suite-total-time">Total running time: 30 seconds</span>
               <div id="times-div-All_Test_Suite">
               </div> <!-- times-div-All_Test_Suite -->
             </div> <!-- times-div -->
@@ -336,7 +615,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-All_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -350,6 +629,13 @@ return data;
               <span class="ignored-class-name">com.commontests.SelectMultipleSoccerbetsTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">TestSelectionOfMultipleSoccerGames</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.commontests.HandballGamesTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">selectSingleHandballRandomBet</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -375,186 +661,197 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">8877 ms</span>
+                <span class="method-start">4203 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.CasinoGamesTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">22749 ms</span>
+                <span class="method-start">19168 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">27096 ms</span>
+                <span class="method-start">26003 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.HandballGamesTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">41064 ms</span>
+                <span class="method-start">37666 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">51459 ms</span>
+                <span class="method-start">47750 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.PlaceSingleSoccerBetTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">64507 ms</span>
+                <span class="method-start">59204 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">69780 ms</span>
+                <span class="method-start">64597 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.RegisterUserTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">85655 ms</span>
+                <span class="method-start">73164 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">visitUrl</span>
-                <span class="method-start">91631 ms</span>
+                <span class="method-start">79584 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.SelectMultipleSoccerbetsTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">103707 ms</span>
+                <span class="method-start">80189 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">109497 ms</span>
+                <span class="method-start">90454 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.TableTennisTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">119780 ms</span>
+                <span class="method-start">100209 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">128624 ms</span>
+                <span class="method-start">107434 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.PlaceSingleSoccerBetTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">placebet</span>
-                <span class="method-start">138238 ms</span>
+                <span class="method-start">122314 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">placebet</span>
+                <span class="method-start">122526 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">placebet</span>
+                <span class="method-start">122725 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">placebet</span>
+                <span class="method-start">122804 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">placebet</span>
+                <span class="method-start">122831 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyMyBets</span>
-                <span class="method-start">145767 ms</span>
+                <span class="method-start">123242 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.TableTennisTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">PlaceTableTennisMatches</span>
-                <span class="method-start">160650 ms</span>
+                <span class="method-start">137955 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.CasinoGamesTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">casinoTest</span>
-                <span class="method-start">167937 ms</span>
+                <span class="method-start">147148 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">174061 ms</span>
+                <span class="method-start">153621 ms</span>
               </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.commontests.HandballGamesTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">selectSingleRandomBet</span>
-                <span class="method-start">174063 ms</span>
-              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.PlaceSingleSoccerBetTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">190334 ms</span>
+                <span class="method-start">153623 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.RegisterUserTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">196614 ms</span>
+                <span class="method-start">155575 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.SelectMultipleSoccerbetsTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">197872 ms</span>
+                <span class="method-start">156581 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.TableTennisTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">197872 ms</span>
+                <span class="method-start">156582 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.BoxingMatchesTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">getReport</span>
-                <span class="method-start">200212 ms</span>
+                <span class="method-start">158668 ms</span>
               </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.CasinoGamesTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">getReport</span>
-                <span class="method-start">218374 ms</span>
+                <span class="method-start">469010 ms</span>
               </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.HandballGamesTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">230899 ms</span>
+                <span class="method-start">917336 ms</span>
               </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.PlaceSingleSoccerBetTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">235158 ms</span>
+                <span class="method-start">1416154 ms</span>
               </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.RegisterUserTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">getReport</span>
-                <span class="method-start">240923 ms</span>
+                <span class="method-start">1927410 ms</span>
               </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.SelectMultipleSoccerbetsTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">getReport</span>
-                <span class="method-start">253324 ms</span>
+                <span class="method-start">2266168 ms</span>
               </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.commontests.TableTennisTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">getReport</span>
-                <span class="method-start">261635 ms</span>
+                <span class="method-start">2565489 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

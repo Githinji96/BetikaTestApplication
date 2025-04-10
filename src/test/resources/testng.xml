@@ -17,24 +17,24 @@
             </class>
             <class name="com.commontests.RegisterUserTest">
                 <methods>
-                    <include name="registeruser"/>
+                    <include name="registerUser"/>
                 </methods>
             </class>
             <class name="com.commontests.SelectMultipleSoccerbetsTest">
                 <methods>
-                    <include name="SelectMultipleSoccerbets"/>
+                    <include name="TestSelectionOfMultipleSoccerGames"/>
 
                 </methods>
 
             </class>
             <class name="com.commontests.TableTennisTest">
                 <methods>
-                    <include name="PlaceTableTennisMatches"/>
+                    <include name="placeTableTennisMatches"/>
                 </methods>
             </class>
             <class name="com.commontests.BoxingMatchesTest">
                 <methods>
-                    <include name=" PlacementBoxingMatches"/>
+                    <include name="placetestBoxingMatches"/>
                 </methods>
             </class>
             <class name="com.commontests.CasinoGamesTest">

@@ -88,7 +88,7 @@ public class BoxingMatchesTest {
     }
 
     @Test(testName="PlacetestBoxingMatches", retryAnalyzer = rerunFailedTestCases.class)
-    public void PlacetestBoxingMatches(){
+    public void placetestBoxingMatches(){
         boxingbtn.click();
         // Handle case where the upcoming matches button might not be present
         try {

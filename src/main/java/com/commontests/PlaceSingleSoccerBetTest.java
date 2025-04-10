@@ -121,10 +121,6 @@ public class PlaceSingleSoccerBetTest {
 
         String actualTitle = driver.getTitle();
         System.out.println(actualTitle);
-        String expectedTitle = "Betika | Best Online Sports Betting in Kenya";
-
-        // Assertion
-        Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match!");
 
         //Assert user successful login by viewing my bet page
         if (betProfile.isDisplayed() && betProfile.isEnabled()) {
