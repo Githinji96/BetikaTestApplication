@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -57,11 +56,40 @@ public class DriverClass {
     public void customWait(WebDriver dr,Integer duration, WebElement element){
         new WebDriverWait(dr, Duration.ofSeconds(duration)).until(ExpectedConditions.visibilityOf(element));
     }
-    public void takeScreenshot(String fileName) throws IOException{
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-	    File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-	    File destFile = new File("./screenshots/"+fileName);
-	    FileUtils.copyFile(sourceFile, destFile);
-	    System.out.println("Screenshot saved successfully");
+    public String takeScreenshot( String fileName) {
+        try {
+            String baseDir = System.getProperty("user.dir");
+            String screenshotDirPath = baseDir + File.separator + "screenshots";
+            File screenshotDir = new File(screenshotDirPath);
+
+            if (!screenshotDir.exists()) {
+                screenshotDir.mkdirs();
+            }
+
+            TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+            File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+            // Sanitize filename
+            fileName = fileName.replaceAll("[^a-zA-Z0-9.-]", "_");
+
+            // Create destination file path
+            String destPath = screenshotDirPath + File.separator + fileName;
+            File destFile = new File(destPath);
+
+            FileUtils.copyFile(sourceFile, destFile);
+
+            System.out.println("Screenshot saved: " + destPath);
+            return destPath; // Return full path
+        } catch (Exception e) {
+            System.out.println("Error while saving screenshot: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public WebDriver getDriver() {
+        if (driver == null) {
+            throw new RuntimeException("WebDriver is not initialized");
+        }
+        return driver;
     }
 }

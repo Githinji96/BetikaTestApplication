@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class Test_BrokenLinksTest {
+public class BrokenLinksTest {
 
     public String betUrl;
     String browser = "chrome";
@@ -28,14 +28,24 @@ public class Test_BrokenLinksTest {
     private JavascriptExecutor js;
 
 
-    public Test_BrokenLinksTest() {
-        // initializing the pageObjects
-        DriverClass driverClass = new DriverClass(browser);
-        driver = driverClass.driver;
-        PageFactory.initElements(driver, this);
-
-    }
     @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("firefox");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
+    }
+    @BeforeTest(dependsOnMethods = "setup")
     public void launchUrl() throws IOException {
         loadProperty ld= new loadProperty();
         ld.loadProperties();

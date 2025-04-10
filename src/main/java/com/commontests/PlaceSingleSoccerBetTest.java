@@ -82,16 +82,24 @@ public class PlaceSingleSoccerBetTest {
     public List<WebElement> matchesResults;
 
 
-    // Class constructor
-    public PlaceSingleSoccerBetTest() {
-        // initializing the pageObjects
-        driverClass = new DriverClass("chrome");
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
-    }
-
     @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
+    }
+    @BeforeTest(dependsOnMethods = "setup")
     private void login() {
         loadProperty ld= new loadProperty();
         try {
@@ -111,8 +119,12 @@ public class PlaceSingleSoccerBetTest {
     @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void placebet() {
 
-        String title = driver.getTitle();
-        System.out.println(title);
+        String actualTitle = driver.getTitle();
+        System.out.println(actualTitle);
+        String expectedTitle = "Betika | Best Online Sports Betting in Kenya";
+
+        // Assertion
+        Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match!");
 
         //Assert user successful login by viewing my bet page
         if (betProfile.isDisplayed() && betProfile.isEnabled()) {
@@ -132,7 +144,7 @@ public class PlaceSingleSoccerBetTest {
         clickbtn.click();
 
 
-        // Get all options within the match section (
+        // Get all options within the match section
         //Random select any market option and place a single bet
         List<WebElement> options = driver.findElements(By.className("market__odds"));
 
@@ -152,7 +164,7 @@ public class PlaceSingleSoccerBetTest {
         enterAmt.sendKeys("99");
 
         //Verify the betslip informations
-        System.out.println("The betslip "+betslip.getText());
+        System.out.println("The betslip\n "+betslip.getText());
         System.out.println("The total odds "+oddValue.getText());
 
              //get bet balance amount

@@ -17,55 +17,65 @@ import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
 public class RegisterUserTest {
-    WebDriver driver;
-    JavascriptExecutor js;
-
-
-    //register link
-    @FindBy(linkText = "Register")
-    WebElement register;
-
-    //phone number textfield
-    @FindBy(xpath = "//input[@placeholder='e.g. 0712 234567']")
-    WebElement phoneNumber;
-
-    //passwords textfield
-    @FindAll(@FindBy(xpath = "//input[@type='password']"))
-    List<WebElement> passwordFields;
-
-    //Check accept radio button
-    @FindBy(className = "checkmark")
-    WebElement acceptTerms;
-
-    //submit button
-    @FindBy(xpath = "//button[contains(@class, 'button') and contains(@class, 'account__payments__submit') and contains(@class, 'session__form__button') and contains(@class, 'login') and contains(@class, 'button') and contains(@class, 'button__secondary')]")
-    WebElement submitBtn;
-
-    private final DriverClass driverClass;
+    private WebDriver driver;
+    private JavascriptExecutor js;
+    private DriverClass driverClass;
     private String betUrl;
 
-    public RegisterUserTest() {
+    // Register link
+    @FindBy(linkText = "Register")
+    private WebElement register;
 
-        driverClass = new DriverClass("edge");
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
+    // Phone number text field
+    @FindBy(xpath = "//input[@placeholder='e.g. 0712 234567']")
+    private WebElement phoneNumber;
 
-    }
+    // Password text fields
+    @FindAll(@FindBy(xpath = "//input[@type='password']"))
+    private List<WebElement> passwordFields;
+
+    // Accept terms radio button
+    @FindBy(className = "checkmark")
+    private WebElement acceptTerms;
+
+    // Submit button
+    @FindBy(xpath = "//button[contains(@class, 'button') and contains(@class, 'account__payments__submit') and contains(@class, 'session__form__button') and contains(@class, 'login') and contains(@class, 'button') and contains(@class, 'button__secondary')]")
+    private WebElement submitBtn;
 
     @BeforeTest
-    public void visitUrl() throws IOException {
-        loadProperty ld= new loadProperty();
-        ld.loadProperties();
-        this.betUrl=ld.betUrl;
-        driver.get(betUrl);
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("Chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
 
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
+    }
+
+    @BeforeTest(dependsOnMethods = "setup")
+    public void visitUrl() throws IOException {
+        if (driver == null) {
+            throw new RuntimeException("WebDriver is not initialized");
+        }
+        loadProperty ld = new loadProperty();
+        ld.loadProperties();
+        this.betUrl = ld.betUrl;
+        driver.get(betUrl);
     }
 
     @AfterTest
     public void tearDown() {
-      driver.quit();
-        driver = null;
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @Test
@@ -80,8 +90,8 @@ public class RegisterUserTest {
         }
         js.executeScript("arguments[0].click()", acceptTerms);
         js.executeScript("arguments[0].click()", submitBtn);
-
     }
+
     @AfterSuite
     public void getReport() {
         // Save the Extent Report
@@ -91,7 +101,3 @@ public class RegisterUserTest {
         ExtentReportManager.convertHtmlToPdf();
     }
 }
-
-
-
-

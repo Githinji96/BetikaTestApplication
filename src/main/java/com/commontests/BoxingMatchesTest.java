@@ -12,10 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -28,7 +25,7 @@ public class BoxingMatchesTest {
 
     WebDriver driver;
     JavascriptExecutor js;
-    DriverClass driverClass;
+   public DriverClass driverClass;
 
     public String URL;
     public String usernumber;
@@ -58,16 +55,25 @@ public class BoxingMatchesTest {
     @FindBy(xpath = "//input[@placeholder='Enter stake']")
     WebElement enterAmt;
 
-    // Class constructor
-    public BoxingMatchesTest() {
-        // initializing the pageObjects
-        driverClass = new DriverClass();
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
 
-    @BeforeMethod
+    @BeforeTest(dependsOnMethods = "setup")
     private void login() throws IOException {
         loadProperty ld= new loadProperty();
         ld.loadProperties();
@@ -116,17 +122,6 @@ public class BoxingMatchesTest {
             System.out.println("Bet placed on odd index: " + randomOddIndex + " for team index: " + randomTeamIndex);
         }
 
-//        List<WebElement> odds;
-//        // Randomly choose team and place multiple bets
-//        for (int i = 0; i <6; i++) {
-//            int randomTeam = (int) Math.floor(Math.random() * teams.size());
-//            odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
-//            int randId = (int) Math.floor(Math.random() * odds.size());
-//            js.executeScript("arguments[0].click()", odds.get(randId));
-//            //print either homewin, draw or awaywin for the matches choosen
-//            System.out.println("Bet placed on odd index: " + randId);
-//
-//        }
 
             enterAmt.sendKeys(Keys.CONTROL + "a" + Keys.BACK_SPACE);
             enterAmt.sendKeys("88");

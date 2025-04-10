@@ -10,10 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +19,7 @@ import java.util.List;
 import java.util.Set;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class Test_DisplayAndPlaceLiveGamesTest {
+public class DisplayAndPlaceLiveGamesTest {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -35,43 +32,56 @@ public class Test_DisplayAndPlaceLiveGamesTest {
     @FindAll(@FindBy(className = "live-match__odds"))
     List<WebElement> teams;
 
-    @FindBy(xpath="//button[normalize-space()='Remove Expired']")
+    @FindBy(xpath = "//button[normalize-space()='Remove Expired']")
     WebElement expiredgames;
 
-    @FindBy(xpath="//button[contains(@class, 'account__payments__submit')]")
+    @FindBy(className = "betslip__details__button__place")
     WebElement acceptAndPlacebet;
 
     @FindAll(@FindBy(className = "stacked"))
     List<WebElement> listGames;
 
-    public Test_DisplayAndPlaceLiveGamesTest() {
-        driverClass = new DriverClass();
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
 
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
-    @BeforeMethod
-    public void login() throws UnhandledAlertException, IOException {
+
+    @BeforeTest(dependsOnMethods = "setup")
+    private void login() throws IOException {
         loadProperty ld = new loadProperty();
         ld.loadProperties();
-
         // Assign the loaded properties to the local instance variables
         this.URL = ld.URL;
         this.usernumber = ld.userNumber;
         this.password = ld.password;
 
+        //Lauch login
         AppLogin lg = new AppLogin();
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
 
-        Set<Cookie> cookies = driver.manage().getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getDomain().contains("betika.com")) { // Check if the cookie is for Betika
-                driver.manage().addCookie(cookie);
-            }
+    Set<Cookie> cookies = driver.manage().getCookies();
+        for(Cookie cookie :cookies) {
+        if (cookie.getDomain().contains("betika.com")) { // Check if the cookie is for Betika
+            driver.manage().addCookie(cookie);
         }
-
     }
+}
+
+
     @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void testlive() throws IOException {
         loadProperty ld= new loadProperty();

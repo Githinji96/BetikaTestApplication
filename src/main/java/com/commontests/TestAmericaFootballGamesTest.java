@@ -8,10 +8,7 @@ import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,27 +37,34 @@ public class TestAmericaFootballGamesTest {
     @FindBy(className = "stacked__details")
     WebElement printselectedOption;
 
-    public TestAmericaFootballGamesTest() {
-        // initializing the pageObjects
-        driverClass = new DriverClass("chrome");
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
 
-    @BeforeMethod
-    public void login() {
-        loadProperty ld = new loadProperty();
-        try {
-            ld.loadProperties();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    @BeforeTest(dependsOnMethods = "setup")
+    private void login() throws IOException {
+        loadProperty ld= new loadProperty();
+        ld.loadProperties();
         // Assign the loaded properties to the local instance variables
         this.URL = ld.URL;
         this.usernumber = ld.userNumber;
         this.password = ld.password;
 
+        //Lauch login
         AppLogin lg = new AppLogin();
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }

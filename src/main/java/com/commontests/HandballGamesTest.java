@@ -8,10 +8,7 @@ import com.utils.ExtentReportManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestHandballGamesTest {
+public class HandballGamesTest {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -41,15 +38,25 @@ public class TestHandballGamesTest {
     @FindBy(className = "stacked__details")
     WebElement printselectedOption;
 
-    public TestHandballGamesTest(){
-        // initializing the pageObjects
-        driverClass = new DriverClass("edge");
-        driver = driverClass.driver;
-        js = driverClass.js;//
-        PageFactory.initElements(driver, this);
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("firefox");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
 
-    @BeforeMethod
+    @BeforeTest(dependsOnMethods = "setup")
     private void login() {
         loadProperty ld= new loadProperty();
         try {
@@ -68,7 +75,7 @@ public class TestHandballGamesTest {
     }
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void selectSingleRandomBet() throws InterruptedException {
+    public void selectSingleHandballRandomBet() {
 
         js.executeScript("arguments[0].click()", handballbtn);
 

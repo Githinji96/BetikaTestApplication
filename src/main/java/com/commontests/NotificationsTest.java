@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestNotificationsTest {
+public class NotificationsTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -31,17 +31,28 @@ public class TestNotificationsTest {
 
     @FindBy(xpath="//button[@class='user-notifications__toggle']//span[@class='visible-desktop'][normalize-space()='Notifications']")
     WebElement notification;
-    // Class constructor
-    public TestNotificationsTest() {
-        // initializing the pageObjects
-        driverClass = new DriverClass("firefox");
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
+
+
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
 
-    @BeforeMethod
-    public void login() throws IOException {
+    @BeforeTest(dependsOnMethods = "setup")
+    private void login() throws IOException {
         loadProperty ld= new loadProperty();
         ld.loadProperties();
         // Assign the loaded properties to the local instance variables
@@ -51,7 +62,6 @@ public class TestNotificationsTest {
 
         AppLogin lg = new AppLogin();
         lg.login(URL, userNumber, password, new ArrayList<>(Arrays.asList(driver, js)));
-
 
     }
     @Test(retryAnalyzer = rerunFailedTestCases.class)

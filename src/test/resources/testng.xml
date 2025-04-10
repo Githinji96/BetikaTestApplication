@@ -12,6 +12,7 @@
             <class name="com.commontests.PlaceSingleSoccerBetTest">
                 <methods>
                    <include name="placebet"/>
+                    <include name="verifyMyBets"/>
                 </methods>
             </class>
             <class name="com.commontests.RegisterUserTest">
@@ -22,10 +23,11 @@
             <class name="com.commontests.SelectMultipleSoccerbetsTest">
                 <methods>
                     <include name="SelectMultipleSoccerbets"/>
+
                 </methods>
 
             </class>
-            <class name="com.commontests.TestTableTennisTest">
+            <class name="com.commontests.TableTennisTest">
                 <methods>
                     <include name="PlaceTableTennisMatches"/>
                 </methods>
@@ -35,12 +37,12 @@
                     <include name=" PlacementBoxingMatches"/>
                 </methods>
             </class>
-            <class name="com.commontests.TestCasinoGamesTest">
+            <class name="com.commontests.CasinoGamesTest">
                 <methods>
                     <include name="casinoTest"/>
                 </methods>
             </class>
-            <class name="com.commontests.TestHandballGamesTest">
+            <class name="com.commontests.HandballGamesTest">
                 <methods>
                     <include name="selectSingleRandomBet"/>
                 </methods>

@@ -1,105 +1,392 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="8" passed="4" failed="0" skipped="0">
+<testng-results retried="4" ignored="4" total="12" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-26T16:10:59 EAT" name="All Test Suite" finished-at="2025-03-26T16:13:02 EAT" duration-ms="122479">
+  <suite started-at="2025-04-09T16:14:08 EAT" name="All Test Suite" finished-at="2025-04-09T16:17:45 EAT" duration-ms="216978">
     <groups>
     </groups>
-    <test started-at="2025-03-26T16:10:59 EAT" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication" finished-at="2025-03-26T16:13:02 EAT" duration-ms="122479">
-      <class name="com.commontests.TestTableTennisTest">
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:11:44 EAT" name="login" finished-at="2025-03-26T16:11:55 EAT" duration-ms="10562" status="PASS">
+    <test started-at="2025-04-09T16:14:08 EAT" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication" finished-at="2025-04-09T16:17:45 EAT" duration-ms="216978">
+      <class name="com.commontests.BoxingMatchesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.BoxingMatchesTest@3ed0918d]" started-at="2025-04-09T16:14:08 EAT" name="setup" finished-at="2025-04-09T16:14:10 EAT" duration-ms="2172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.BoxingMatchesTest@3ed0918d]" started-at="2025-04-09T16:14:10 EAT" name="login" finished-at="2025-04-09T16:14:20 EAT" depends-on-methods="com.commontests.BoxingMatchesTest.setup" duration-ms="9892" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="PlaceTableTennisMatches()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:11:55 EAT" name="PlaceTableTennisMatches" finished-at="2025-03-26T16:12:04 EAT" duration-ms="9666" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PlaceTableTennisMatches -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:13:02 EAT" name="teardown" finished-at="2025-03-26T16:13:02 EAT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TestTableTennisTest@19650aa6]" started-at="2025-03-26T16:13:26 EAT" name="getReport" finished-at="2025-03-26T16:13:28 EAT" duration-ms="2348" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getReport -->
-      </class> <!-- com.commontests.TestTableTennisTest -->
-      <class name="com.commontests.BoxingMatchesTest">
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.BoxingMatchesTest@51841ac6]" started-at="2025-03-26T16:13:03 EAT" name="getReport" finished-at="2025-03-26T16:13:11 EAT" duration-ms="7591" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.BoxingMatchesTest@3ed0918d]" started-at="2025-04-09T16:24:07 EAT" name="getReport" finished-at="2025-04-09T16:43:51 EAT" duration-ms="1183944" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.BoxingMatchesTest -->
-      <class name="com.commontests.TestHandballGamesTest">
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TestHandballGamesTest@44cffc25]" started-at="2025-03-26T16:12:21 EAT" name="login" finished-at="2025-03-26T16:12:36 EAT" duration-ms="14933" status="PASS">
+      <class name="com.commontests.HandballGamesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.HandballGamesTest@66ec9390]" started-at="2025-04-09T16:14:40 EAT" name="setup" finished-at="2025-04-09T16:14:51 EAT" duration-ms="10412" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.HandballGamesTest@66ec9390]" started-at="2025-04-09T16:14:51 EAT" name="login" finished-at="2025-04-09T16:15:02 EAT" depends-on-methods="com.commontests.HandballGamesTest.setup" duration-ms="11475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="selectSingleRandomBet()[pri:0, instance:com.commontests.TestHandballGamesTest@44cffc25]" started-at="2025-03-26T16:12:36 EAT" name="selectSingleRandomBet" finished-at="2025-03-26T16:12:58 EAT" duration-ms="21604" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectSingleRandomBet -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.TestHandballGamesTest@44cffc25]" started-at="2025-03-26T16:13:23 EAT" name="tearDown" finished-at="2025-03-26T16:13:26 EAT" duration-ms="2879" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.HandballGamesTest@66ec9390]" started-at="2025-04-09T16:49:54 EAT" name="tearDown" finished-at="2025-04-09T16:57:08 EAT" duration-ms="434073" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.commontests.TestHandballGamesTest -->
-      <class name="com.commontests.TestCasinoGamesTest">
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:12:04 EAT" name="login" finished-at="2025-03-26T16:12:15 EAT" duration-ms="11260" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="casinoTest()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:12:15 EAT" name="casinoTest" finished-at="2025-03-26T16:12:21 EAT" duration-ms="5561" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- casinoTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:12:21 EAT" name="teardown" finished-at="2025-03-26T16:12:21 EAT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TestCasinoGamesTest@60f70249]" started-at="2025-03-26T16:13:20 EAT" name="getReport" finished-at="2025-03-26T16:13:23 EAT" duration-ms="2916" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getReport -->
-      </class> <!-- com.commontests.TestCasinoGamesTest -->
+      </class> <!-- com.commontests.HandballGamesTest -->
       <class name="com.commontests.RegisterUserTest">
-        <test-method is-config="true" signature="visitUrl()[pri:0, instance:com.commontests.RegisterUserTest@213c3543]" started-at="2025-03-26T16:11:25 EAT" name="visitUrl" finished-at="2025-03-26T16:11:39 EAT" duration-ms="14330" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.RegisterUserTest@38eb2fb0]" started-at="2025-04-09T16:15:17 EAT" name="setup" finished-at="2025-04-09T16:15:24 EAT" duration-ms="6744" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="visitUrl()[pri:0, instance:com.commontests.RegisterUserTest@38eb2fb0]" started-at="2025-04-09T16:15:24 EAT" name="visitUrl" finished-at="2025-04-09T16:15:36 EAT" depends-on-methods="com.commontests.RegisterUserTest.setup" duration-ms="12060" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- visitUrl -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.RegisterUserTest@213c3543]" started-at="2025-03-26T16:12:58 EAT" name="tearDown" finished-at="2025-03-26T16:13:01 EAT" duration-ms="3076" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.RegisterUserTest@38eb2fb0]" started-at="2025-04-09T16:16:58 EAT" name="tearDown" finished-at="2025-04-09T16:17:45 EAT" duration-ms="46867" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.RegisterUserTest@213c3543]" started-at="2025-03-26T16:13:14 EAT" name="getReport" finished-at="2025-03-26T16:13:17 EAT" duration-ms="3127" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.RegisterUserTest@38eb2fb0]" started-at="2025-04-09T17:03:42 EAT" name="getReport" finished-at="2025-04-09T17:10:16 EAT" duration-ms="394467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.RegisterUserTest -->
+      <class name="com.commontests.TableTennisTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.TableTennisTest@5bb7643d]" started-at="2025-04-09T16:15:52 EAT" name="setup" finished-at="2025-04-09T16:15:57 EAT" duration-ms="5000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TableTennisTest@5bb7643d]" started-at="2025-04-09T16:15:57 EAT" name="login" finished-at="2025-04-09T16:16:08 EAT" depends-on-methods="com.commontests.TableTennisTest.setup" duration-ms="10846" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="PlaceTableTennisMatches()[pri:0, instance:com.commontests.TableTennisTest@5bb7643d]" started-at="2025-04-09T16:16:23 EAT" name="PlaceTableTennisMatches" finished-at="2025-04-09T16:16:36 EAT" duration-ms="13111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlaceTableTennisMatches -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TableTennisTest@5bb7643d]" started-at="2025-04-09T16:17:45 EAT" name="teardown" finished-at="2025-04-09T16:17:45 EAT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TableTennisTest@5bb7643d]" started-at="2025-04-09T17:16:29 EAT" name="getReport" finished-at="2025-04-09T17:21:58 EAT" duration-ms="328238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.TableTennisTest -->
+      <class name="com.commontests.CasinoGamesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.CasinoGamesTest@5e268ce6]" started-at="2025-04-09T16:14:20 EAT" name="setup" finished-at="2025-04-09T16:14:28 EAT" duration-ms="7399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.CasinoGamesTest@5e268ce6]" started-at="2025-04-09T16:14:28 EAT" name="login" finished-at="2025-04-09T16:14:40 EAT" depends-on-methods="com.commontests.CasinoGamesTest.setup" duration-ms="12462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="casinoTest()[pri:0, instance:com.commontests.CasinoGamesTest@5e268ce6]" started-at="2025-04-09T16:16:36 EAT" name="casinoTest" finished-at="2025-04-09T16:16:52 EAT" duration-ms="15410" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- casinoTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.CasinoGamesTest@5e268ce6]" started-at="2025-04-09T16:16:52 EAT" name="teardown" finished-at="2025-04-09T16:16:52 EAT" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.CasinoGamesTest@5e268ce6]" started-at="2025-04-09T16:43:51 EAT" name="getReport" finished-at="2025-04-09T16:49:50 EAT" duration-ms="358829" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.CasinoGamesTest -->
       <class name="com.commontests.SelectMultipleSoccerbetsTest">
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@75fc1992]" started-at="2025-03-26T16:13:01 EAT" name="tearDown" finished-at="2025-03-26T16:13:02 EAT" duration-ms="494" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@4567e53d]" started-at="2025-04-09T16:15:36 EAT" name="setup" finished-at="2025-04-09T16:15:41 EAT" duration-ms="5449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@4567e53d]" started-at="2025-04-09T16:15:41 EAT" name="login" finished-at="2025-04-09T16:15:52 EAT" depends-on-methods="com.commontests.SelectMultipleSoccerbetsTest.setup" duration-ms="10453" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@4567e53d]" started-at="2025-04-09T16:17:45 EAT" name="tearDown" finished-at="2025-04-09T16:17:45 EAT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@75fc1992]" started-at="2025-03-26T16:13:17 EAT" name="getReport" finished-at="2025-03-26T16:13:20 EAT" duration-ms="3217" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@4567e53d]" started-at="2025-04-09T17:10:16 EAT" name="getReport" finished-at="2025-04-09T17:16:29 EAT" duration-ms="373377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.SelectMultipleSoccerbetsTest -->
       <class name="com.commontests.PlaceSingleSoccerBetTest">
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:11:00 EAT" name="login" finished-at="2025-03-26T16:11:25 EAT" duration-ms="25080" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:15:02 EAT" name="setup" finished-at="2025-04-09T16:15:09 EAT" duration-ms="6743" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:15:09 EAT" name="login" finished-at="2025-04-09T16:15:17 EAT" depends-on-methods="com.commontests.PlaceSingleSoccerBetTest.setup" duration-ms="8445" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:11:39 EAT" name="placebet" finished-at="2025-03-26T16:11:44 EAT" duration-ms="4948" status="PASS">
+        <test-method retried="true" signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:16:08 EAT" name="placebet" finished-at="2025-04-09T16:16:08 EAT" duration-ms="104" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placebet -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:12:58 EAT" name="closeBrowser" finished-at="2025-03-26T16:12:58 EAT" duration-ms="856" status="PASS">
+        <test-method retried="true" signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:16:08 EAT" name="placebet" finished-at="2025-04-09T16:16:08 EAT" duration-ms="28" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placebet -->
+        <test-method retried="true" signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:16:08 EAT" name="placebet" finished-at="2025-04-09T16:16:08 EAT" duration-ms="19" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placebet -->
+        <test-method retried="true" signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:16:08 EAT" name="placebet" finished-at="2025-04-09T16:16:08 EAT" duration-ms="49" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placebet -->
+        <test-method signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:16:08 EAT" name="placebet" finished-at="2025-04-09T16:16:08 EAT" duration-ms="227" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Page title does not match! expected [Betika | Best Online Sports Betting in Kenya] but found [Soccer Betting | Football Betting Odds | Betika]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at com.commontests.PlaceSingleSoccerBetTest.placebet(PlaceSingleSoccerBetTest.java:127)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placebet -->
+        <test-method signature="verifyMyBets()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:16:09 EAT" name="verifyMyBets" finished-at="2025-04-09T16:16:23 EAT" duration-ms="14557" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMyBets -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:16:52 EAT" name="closeBrowser" finished-at="2025-04-09T16:16:58 EAT" duration-ms="6470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@12b5454f]" started-at="2025-03-26T16:13:11 EAT" name="tearDown" finished-at="2025-03-26T16:13:14 EAT" duration-ms="3015" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@2c306a57]" started-at="2025-04-09T16:57:08 EAT" name="tearDown" finished-at="2025-04-09T17:03:42 EAT" duration-ms="393334" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

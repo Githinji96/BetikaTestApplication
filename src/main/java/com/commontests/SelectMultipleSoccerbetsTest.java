@@ -31,6 +31,7 @@ public class SelectMultipleSoccerbetsTest {
     public String URL;
     public String usernumber;
     public String password;
+    private DriverClass driverClass;
 
     //placebet button
     @FindBy(xpath = "//button[contains(@class, 'account__payments__submit') and contains(@class, 'betslip__details__button__place')]")
@@ -60,17 +61,25 @@ public class SelectMultipleSoccerbetsTest {
     WebElement cancelModal;
 
 
-    public SelectMultipleSoccerbetsTest() {
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass();
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
 
-        DriverClass driverClass = new DriverClass("Chrome");
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
-
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
 
-
-  @BeforeMethod
+  @BeforeTest(dependsOnMethods = "setup")
     public void login() throws UnhandledAlertException, IOException {
         loadProperty ld = new loadProperty();
         ld.loadProperties();
@@ -84,7 +93,7 @@ public class SelectMultipleSoccerbetsTest {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
 
     }
-   @Test(retryAnalyzer = rerunFailedTestCases.class)
+   @Test(testName = "TestSelectionOfMultipleSoccerGames")//(retryAnalyzer = rerunFailedTestCases.class)
     public void TestSelectionOfMultipleSoccerGames() {
        List<WebElement> listItems = oddsContainer;
 
@@ -101,21 +110,24 @@ public class SelectMultipleSoccerbetsTest {
 
            }
 
-        // Home, draw or away buttons
-        List<WebElement> odds;
-        // Randomly choose team and place multiple bets
-        for (int i = 0; i < 10; i++) {
-            int randomTeam = (int) Math.floor(Math.random() * teams.size());
-            odds = teams.get(randomTeam).findElements(By.className("prebet-match__odd"));
-            int randId = (int) Math.floor(Math.random() * odds.size());
-            js.executeScript("arguments[0].click()", odds.get(randId));
+//  Iterate over all matches and randomly select an odd for each
+       for (WebElement team : teams) {
+           List<WebElement> odds = team.findElements(By.className("prebet-match__odd"));
 
-            //print either homewin, draw or awaywin for the matches choosen
-            System.out.println("Bet placed on odd index: " + randId);
+           if (!odds.isEmpty()) { // Ensure there are odds available
+               int randId = (int) Math.floor(Math.random() * odds.size());
+               js.executeScript("arguments[0].click()", odds.get(randId));
 
-        }
-        System.out.println("Number of matches. " + teams.size());
-        // get all matches selected in betslip
+               // Print selected odd (Home Win, Draw, or Away Win)
+               System.out.println("Selected odd index: " + randId);
+           }
+
+       }
+
+       System.out.println("Total matches selected: " + teams.size());
+
+
+       // get all matches selected in betslip
         for (WebElement listItem : roundedCard) {
             System.out.println(listItem.getText());
         }
@@ -155,8 +167,7 @@ public class SelectMultipleSoccerbetsTest {
 
     @AfterTest
     public void tearDown() {
-       driver.quit();
-        //driver = null;
+      // driver.quit();
 
     }
     @AfterSuite

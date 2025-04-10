@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestCasinoGamesTest {
+public class CasinoGamesTest {
     WebDriver driver;
     JavascriptExecutor js;
     DriverClass driverClass;
@@ -25,15 +25,25 @@ public class TestCasinoGamesTest {
     public String usernumber;
     public String password;
 
-    public TestCasinoGamesTest() {
-        // initializing the pageObjects
-        driverClass = new DriverClass("edge");
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
 
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
+
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
-    @BeforeMethod
+    @BeforeTest(dependsOnMethods = "setup")
     private void login() {
         loadProperty ld= new loadProperty();
         try {

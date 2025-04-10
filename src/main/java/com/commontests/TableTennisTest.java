@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
-public class TestTableTennisTest {
+public class TableTennisTest {
 
     WebDriver driver;
     JavascriptExecutor js;
@@ -52,17 +52,24 @@ public class TestTableTennisTest {
     WebElement submit;
 
 
+    @BeforeTest
+    public void setup() {
+        try {
+            System.out.println("Initializing WebDriver...");
+            driverClass = new DriverClass("chrome");
+            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
 
-    // Class constructor
-    public TestTableTennisTest() {
-        // initializing the pageObjects
-        driverClass = new DriverClass();
-        driver = driverClass.driver;
-        js = driverClass.js;
-        PageFactory.initElements(driver, this);
+            if (driver == null) {
+                throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize WebDriver");
+        }
     }
-
-    @BeforeMethod
+    @BeforeTest(dependsOnMethods = "setup")
     private void login() {
         loadProperty ld= new loadProperty();
         try {
