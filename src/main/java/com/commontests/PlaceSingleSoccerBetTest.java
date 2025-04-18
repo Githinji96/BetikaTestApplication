@@ -117,7 +117,7 @@ public class PlaceSingleSoccerBetTest {
     }
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void placebet() {
+    public void placeSingleSoccerbet() {
 
         String actualTitle = driver.getTitle();
         System.out.println(actualTitle);

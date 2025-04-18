@@ -65,7 +65,7 @@ public class SelectMultipleSoccerbetsTest {
     public void setup() {
         try {
             System.out.println("Initializing WebDriver...");
-            driverClass = new DriverClass();
+            driverClass = new DriverClass("firefox");
             driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
             js = (JavascriptExecutor) driver;
             PageFactory.initElements(driver, this);

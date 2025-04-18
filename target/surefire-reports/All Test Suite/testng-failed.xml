@@ -7,13 +7,60 @@
   </listeners>
   <test thread-count="5" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication(failed)" verbose="0">
     <classes>
+      <class name="com.commontests.RegisterUserTest">
+        <methods>
+          <include name="getReport"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.commontests.RegisterUserTest -->
+      <class name="com.commontests.SelectMultipleSoccerbetsTest">
+        <methods>
+          <include name="login"/>
+          <include name="tearDown"/>
+          <include name="getReport"/>
+          <include name="setup"/>
+          <include name="TestSelectionOfMultipleSoccerGames"/>
+        </methods>
+      </class> <!-- com.commontests.SelectMultipleSoccerbetsTest -->
+      <class name="com.commontests.BoxingMatchesTest">
+        <methods>
+          <include name="login"/>
+          <include name="getReport"/>
+          <include name="setup"/>
+          <include name="placetestBoxingMatches"/>
+        </methods>
+      </class> <!-- com.commontests.BoxingMatchesTest -->
+      <class name="com.commontests.TableTennisTest">
+        <methods>
+          <include name="setup"/>
+          <include name="getReport"/>
+          <include name="teardown"/>
+          <include name="login"/>
+          <include name="placeTableTennisMatches"/>
+        </methods>
+      </class> <!-- com.commontests.TableTennisTest -->
+      <class name="com.commontests.HandballGamesTest">
+        <methods>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.commontests.HandballGamesTest -->
+      <class name="com.commontests.CasinoGamesTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="getReport"/>
+          <include name="casinoTest"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.commontests.CasinoGamesTest -->
       <class name="com.commontests.PlaceSingleSoccerBetTest">
         <methods>
+          <include name="verifyMyBets"/>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="placebet"/>
+          <include name="placeSingleSoccerbet"/>
         </methods>
       </class> <!-- com.commontests.PlaceSingleSoccerBetTest -->
     </classes>

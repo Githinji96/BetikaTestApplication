@@ -11,7 +11,7 @@
         <classes>
             <class name="com.commontests.PlaceSingleSoccerBetTest">
                 <methods>
-                   <include name="placebet"/>
+                   <include name="placeSingleSoccerbet"/>
                     <include name="verifyMyBets"/>
                 </methods>
             </class>

@@ -1,98 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="1" total="8" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-08T21:45:01 EAT" name="Default suite" finished-at="2023-04-08T21:45:31 EAT" duration-ms="29919">
+  <suite started-at="2025-04-15T16:11:01 EAT" name="All Test Suite" finished-at="2025-04-15T16:14:52 EAT" duration-ms="231164">
     <groups>
     </groups>
-    <test started-at="2023-04-08T21:45:01 EAT" name="Default test" finished-at="2023-04-08T21:45:31 EAT" duration-ms="29919">
-      <class name="com.baseClassPackage.LoginPageAuthentication">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.baseClassPackage.LoginPageAuthentication@6778aea6]" started-at="2023-04-08T21:44:59 EAT" name="setup" finished-at="2023-04-08T21:45:01 EAT" duration-ms="1815" status="PASS">
+    <test started-at="2025-04-15T16:11:01 EAT" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication" finished-at="2025-04-15T16:14:52 EAT" duration-ms="231164">
+      <class name="com.commontests.BoxingMatchesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:11:01 EAT" name="setup" finished-at="2025-04-15T16:11:28 EAT" duration-ms="27278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="enterurl()[pri:0, instance:com.baseClassPackage.LoginPageAuthentication@6778aea6]" started-at="2023-04-08T21:45:01 EAT" name="enterurl" finished-at="2023-04-08T21:45:31 EAT" duration-ms="29435" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:11:28 EAT" name="login" finished-at="2025-04-15T16:11:39 EAT" depends-on-methods="com.commontests.BoxingMatchesTest.setup" duration-ms="11046" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- enterurl -->
-        <test-method signature="verifyLoginTitleTest()[pri:0, instance:com.baseClassPackage.LoginPageAuthentication@6778aea6]" started-at="2023-04-08T21:45:31 EAT" name="verifyLoginTitleTest" finished-at="2023-04-08T21:45:31 EAT" duration-ms="41" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=111.0.5563.148)
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b5ea09bd6972c54420eec310f0586ef9, getTitle {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.148, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53668}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53668/devtoo..., se:cdpVersion: 111.0.5563.148, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b5ea09bd6972c54420eec310f0586ef9]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=111.0.5563.148)
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b5ea09bd6972c54420eec310f0586ef9, getTitle {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.148, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53668}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53668/devtoo..., se:cdpVersion: 111.0.5563.148, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b5ea09bd6972c54420eec310f0586ef9
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-at org.openqa.selenium.remote.RemoteWebDriver.getTitle(RemoteWebDriver.java:302)
-at com.baseClassPackage.LoginPageAuthentication.verifyLoginTitleTest(com.baseClassPackage.LoginPageAuthentication.java:51)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+        </test-method> <!-- login -->
+        <test-method signature="placetestBoxingMatches()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:14:38 EAT" name="placetestBoxingMatches" finished-at="2025-04-15T16:14:43 EAT" duration-ms="4983" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginTitleTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.baseClassPackage.LoginPageAuthentication@6778aea6]" started-at="2023-04-08T21:45:31 EAT" name="tearDown" finished-at="2023-04-08T21:45:31 EAT" duration-ms="252" status="PASS">
+        </test-method> <!-- placetestBoxingMatches -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:14:54 EAT" name="getReport" finished-at="2025-04-15T16:15:09 EAT" duration-ms="15658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.BoxingMatchesTest -->
+      <class name="com.commontests.HandballGamesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.HandballGamesTest@5e600dd5]" started-at="2025-04-15T16:11:57 EAT" name="setup" finished-at="2025-04-15T16:12:14 EAT" duration-ms="16483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.HandballGamesTest@5e600dd5]" started-at="2025-04-15T16:12:14 EAT" name="login" finished-at="2025-04-15T16:12:26 EAT" depends-on-methods="com.commontests.HandballGamesTest.setup" duration-ms="12217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.HandballGamesTest@5e600dd5]" started-at="2025-04-15T16:15:14 EAT" name="tearDown" finished-at="2025-04-15T16:15:20 EAT" duration-ms="6042" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.baseClassPackage.LoginPageAuthentication -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.commontests.HandballGamesTest -->
+      <class name="com.commontests.TableTennisTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:13:21 EAT" name="setup" finished-at="2025-04-15T16:13:43 EAT" duration-ms="22431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:13:43 EAT" name="login" finished-at="2025-04-15T16:13:56 EAT" depends-on-methods="com.commontests.TableTennisTest.setup" duration-ms="12889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="placeTableTennisMatches()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:14:28 EAT" name="placeTableTennisMatches" finished-at="2025-04-15T16:14:38 EAT" duration-ms="9191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeTableTennisMatches -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:14:52 EAT" name="teardown" finished-at="2025-04-15T16:14:52 EAT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:15:33 EAT" name="getReport" finished-at="2025-04-15T16:15:36 EAT" duration-ms="3201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.TableTennisTest -->
+      <class name="com.commontests.RegisterUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:12:44 EAT" name="setup" finished-at="2025-04-15T16:12:51 EAT" duration-ms="6749" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="visitUrl()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:12:51 EAT" name="visitUrl" finished-at="2025-04-15T16:12:54 EAT" depends-on-methods="com.commontests.RegisterUserTest.setup" duration-ms="3449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- visitUrl -->
+        <test-method signature="registerUser()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:14:20 EAT" name="registerUser" finished-at="2025-04-15T16:14:23 EAT" duration-ms="2700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:14:52 EAT" name="tearDown" finished-at="2025-04-15T16:14:52 EAT" duration-ms="580" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:15:25 EAT" name="getReport" finished-at="2025-04-15T16:15:29 EAT" duration-ms="4461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.RegisterUserTest -->
+      <class name="com.commontests.CasinoGamesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:11:39 EAT" name="setup" finished-at="2025-04-15T16:11:46 EAT" duration-ms="6368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:11:46 EAT" name="login" finished-at="2025-04-15T16:11:57 EAT" depends-on-methods="com.commontests.CasinoGamesTest.setup" duration-ms="11489" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="casinoTest()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:14:43 EAT" name="casinoTest" finished-at="2025-04-15T16:14:49 EAT" duration-ms="6451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- casinoTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:14:49 EAT" name="teardown" finished-at="2025-04-15T16:14:49 EAT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:15:09 EAT" name="getReport" finished-at="2025-04-15T16:15:14 EAT" duration-ms="4929" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.CasinoGamesTest -->
+      <class name="com.commontests.SelectMultipleSoccerbetsTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:12:54 EAT" name="setup" finished-at="2025-04-15T16:13:03 EAT" duration-ms="8849" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:13:03 EAT" name="login" finished-at="2025-04-15T16:13:21 EAT" depends-on-methods="com.commontests.SelectMultipleSoccerbetsTest.setup" duration-ms="17254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="TestSelectionOfMultipleSoccerGames()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:14:23 EAT" name="TestSelectionOfMultipleSoccerGames" finished-at="2025-04-15T16:14:28 EAT" duration-ms="5801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSelectionOfMultipleSoccerGames -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:14:52 EAT" name="tearDown" finished-at="2025-04-15T16:14:52 EAT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:15:29 EAT" name="getReport" finished-at="2025-04-15T16:15:33 EAT" duration-ms="3203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.SelectMultipleSoccerbetsTest -->
+      <class name="com.commontests.PlaceSingleSoccerBetTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:12:26 EAT" name="setup" finished-at="2025-04-15T16:12:31 EAT" duration-ms="5363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:12:31 EAT" name="login" finished-at="2025-04-15T16:12:44 EAT" depends-on-methods="com.commontests.PlaceSingleSoccerBetTest.setup" duration-ms="12943" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:13:56 EAT" name="placebet" finished-at="2025-04-15T16:14:05 EAT" duration-ms="9507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placebet -->
+        <test-method signature="verifyMyBets()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:14:05 EAT" name="verifyMyBets" finished-at="2025-04-15T16:14:20 EAT" duration-ms="14477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMyBets -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:14:49 EAT" name="closeBrowser" finished-at="2025-04-15T16:14:52 EAT" duration-ms="2545" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:15:20 EAT" name="tearDown" finished-at="2025-04-15T16:15:25 EAT" duration-ms="4446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.commontests.PlaceSingleSoccerBetTest -->
+    </test> <!-- C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication -->
+  </suite> <!-- All Test Suite -->
 </testng-results>

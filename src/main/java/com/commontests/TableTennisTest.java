@@ -56,7 +56,7 @@ public class TableTennisTest {
     public void setup() {
         try {
             System.out.println("Initializing WebDriver...");
-            driverClass = new DriverClass("chrome");
+            driverClass = new DriverClass("Chrome");
             driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
             js = (JavascriptExecutor) driver;
             PageFactory.initElements(driver, this);
