@@ -82,7 +82,7 @@ public class BoxingMatchesTest {
         this.usernumber = ld.userNumber;
         this.password = ld.password;
 
-        //Lauch login
+        //Launch login
         AppLogin lg = new AppLogin();
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }

@@ -223,7 +223,7 @@ public class PlaceSingleSoccerBetTest {
             } else {
                 System.out.println("Betslip outcomes button is not displayed.");
             }
-        } catch (NoSuchElementException e) {
+        } catch (NoSuchElementException ignored) {
 
         }
 

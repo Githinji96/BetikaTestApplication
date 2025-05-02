@@ -18,8 +18,8 @@ import java.text.SimpleDateFormat;
 
 
 public class Listeners implements ITestListener {
-    private static ExtentReports extent = ExtentReportManager.getReportInstance();
-    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+    private static final ExtentReports extent = ExtentReportManager.getReportInstance();
+    private static final ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
      // Instance of DriverClass
 
     @Override

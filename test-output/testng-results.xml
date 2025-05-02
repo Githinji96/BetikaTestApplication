@@ -1,153 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="8" passed="7" failed="0" skipped="0">
+<testng-results ignored="1" total="10" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-15T16:11:01 EAT" name="All Test Suite" finished-at="2025-04-15T16:14:52 EAT" duration-ms="231164">
+  <suite started-at="2025-04-26T20:03:56 EAT" name="All Test Suite" finished-at="2025-04-26T20:07:03 EAT" duration-ms="187000">
     <groups>
     </groups>
-    <test started-at="2025-04-15T16:11:01 EAT" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication" finished-at="2025-04-15T16:14:52 EAT" duration-ms="231164">
+    <test started-at="2025-04-26T20:03:56 EAT" name="C:/Users/User/eclipse-workspace/BetikaWebApplicationTest/BetikaTestApplication" finished-at="2025-04-26T20:07:03 EAT" duration-ms="187000">
       <class name="com.commontests.BoxingMatchesTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:11:01 EAT" name="setup" finished-at="2025-04-15T16:11:28 EAT" duration-ms="27278" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.BoxingMatchesTest@4a883b15]" started-at="2025-04-26T20:03:56 EAT" name="setup" finished-at="2025-04-26T20:03:59 EAT" duration-ms="2800" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:11:28 EAT" name="login" finished-at="2025-04-15T16:11:39 EAT" depends-on-methods="com.commontests.BoxingMatchesTest.setup" duration-ms="11046" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.BoxingMatchesTest@4a883b15]" started-at="2025-04-26T20:03:59 EAT" name="login" finished-at="2025-04-26T20:04:09 EAT" depends-on-methods="com.commontests.BoxingMatchesTest.setup" duration-ms="9841" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="placetestBoxingMatches()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:14:38 EAT" name="placetestBoxingMatches" finished-at="2025-04-15T16:14:43 EAT" duration-ms="4983" status="PASS">
+        <test-method signature="placetestBoxingMatches()[pri:0, instance:com.commontests.BoxingMatchesTest@4a883b15]" started-at="2025-04-26T20:06:40 EAT" name="placetestBoxingMatches" finished-at="2025-04-26T20:06:44 EAT" duration-ms="3179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placetestBoxingMatches -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.BoxingMatchesTest@121314f7]" started-at="2025-04-15T16:14:54 EAT" name="getReport" finished-at="2025-04-15T16:15:09 EAT" duration-ms="15658" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.BoxingMatchesTest@4a883b15]" started-at="2025-04-26T20:07:05 EAT" name="getReport" finished-at="2025-04-26T20:07:15 EAT" duration-ms="10597" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.BoxingMatchesTest -->
       <class name="com.commontests.HandballGamesTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.HandballGamesTest@5e600dd5]" started-at="2025-04-15T16:11:57 EAT" name="setup" finished-at="2025-04-15T16:12:14 EAT" duration-ms="16483" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.HandballGamesTest@7b36aa0c]" started-at="2025-04-26T20:04:39 EAT" name="setup" finished-at="2025-04-26T20:04:47 EAT" duration-ms="8494" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.HandballGamesTest@5e600dd5]" started-at="2025-04-15T16:12:14 EAT" name="login" finished-at="2025-04-15T16:12:26 EAT" depends-on-methods="com.commontests.HandballGamesTest.setup" duration-ms="12217" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.HandballGamesTest@7b36aa0c]" started-at="2025-04-26T20:04:47 EAT" name="login" finished-at="2025-04-26T20:04:59 EAT" depends-on-methods="com.commontests.HandballGamesTest.setup" duration-ms="11401" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.HandballGamesTest@5e600dd5]" started-at="2025-04-15T16:15:14 EAT" name="tearDown" finished-at="2025-04-15T16:15:20 EAT" duration-ms="6042" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.HandballGamesTest@7b36aa0c]" started-at="2025-04-26T20:07:43 EAT" name="tearDown" finished-at="2025-04-26T20:07:56 EAT" duration-ms="13731" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.commontests.HandballGamesTest -->
-      <class name="com.commontests.TableTennisTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:13:21 EAT" name="setup" finished-at="2025-04-15T16:13:43 EAT" duration-ms="22431" status="PASS">
+      <class name="com.commontests.CricketGamesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.CricketGamesTest@5824a83d]" started-at="2025-04-26T20:04:22 EAT" name="setup" finished-at="2025-04-26T20:04:25 EAT" duration-ms="2658" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:13:43 EAT" name="login" finished-at="2025-04-15T16:13:56 EAT" depends-on-methods="com.commontests.TableTennisTest.setup" duration-ms="12889" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.CricketGamesTest@5824a83d]" started-at="2025-04-26T20:04:25 EAT" name="login" finished-at="2025-04-26T20:04:39 EAT" depends-on-methods="com.commontests.CricketGamesTest.setup" duration-ms="14095" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="placeTableTennisMatches()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:14:28 EAT" name="placeTableTennisMatches" finished-at="2025-04-15T16:14:38 EAT" duration-ms="9191" status="PASS">
+        <test-method signature="selectMultipleCricketGames()[pri:0, instance:com.commontests.CricketGamesTest@5824a83d]" started-at="2025-04-26T20:06:53 EAT" name="selectMultipleCricketGames" finished-at="2025-04-26T20:06:58 EAT" duration-ms="5049" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectMultipleCricketGames -->
+        <test-method signature="printTeamsAndMarketOdds()[pri:0, instance:com.commontests.CricketGamesTest@5824a83d]" started-at="2025-04-26T20:06:58 EAT" name="printTeamsAndMarketOdds" finished-at="2025-04-26T20:07:02 EAT" duration-ms="3447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printTeamsAndMarketOdds -->
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.CricketGamesTest@5824a83d]" started-at="2025-04-26T20:07:26 EAT" name="getReport" finished-at="2025-04-26T20:07:43 EAT" duration-ms="16546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReport -->
+      </class> <!-- com.commontests.CricketGamesTest -->
+      <class name="com.commontests.TableTennisTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.TableTennisTest@52719fb6]" started-at="2025-04-26T20:05:56 EAT" name="setup" finished-at="2025-04-26T20:06:01 EAT" duration-ms="5796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.TableTennisTest@52719fb6]" started-at="2025-04-26T20:06:01 EAT" name="login" finished-at="2025-04-26T20:06:12 EAT" depends-on-methods="com.commontests.TableTennisTest.setup" duration-ms="10689" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="placeTableTennisMatches()[pri:0, instance:com.commontests.TableTennisTest@52719fb6]" started-at="2025-04-26T20:06:34 EAT" name="placeTableTennisMatches" finished-at="2025-04-26T20:06:40 EAT" duration-ms="5915" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeTableTennisMatches -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:14:52 EAT" name="teardown" finished-at="2025-04-15T16:14:52 EAT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.TableTennisTest@52719fb6]" started-at="2025-04-26T20:07:03 EAT" name="teardown" finished-at="2025-04-26T20:07:03 EAT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TableTennisTest@4f80542f]" started-at="2025-04-15T16:15:33 EAT" name="getReport" finished-at="2025-04-15T16:15:36 EAT" duration-ms="3201" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.TableTennisTest@52719fb6]" started-at="2025-04-26T20:08:18 EAT" name="getReport" finished-at="2025-04-26T20:08:22 EAT" duration-ms="3810" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.TableTennisTest -->
       <class name="com.commontests.RegisterUserTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:12:44 EAT" name="setup" finished-at="2025-04-15T16:12:51 EAT" duration-ms="6749" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.RegisterUserTest@51c668e3]" started-at="2025-04-26T20:05:15 EAT" name="setup" finished-at="2025-04-26T20:05:21 EAT" duration-ms="5932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="visitUrl()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:12:51 EAT" name="visitUrl" finished-at="2025-04-15T16:12:54 EAT" depends-on-methods="com.commontests.RegisterUserTest.setup" duration-ms="3449" status="PASS">
+        <test-method is-config="true" signature="visitUrl()[pri:0, instance:com.commontests.RegisterUserTest@51c668e3]" started-at="2025-04-26T20:05:21 EAT" name="visitUrl" finished-at="2025-04-26T20:05:35 EAT" depends-on-methods="com.commontests.RegisterUserTest.setup" duration-ms="14463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- visitUrl -->
-        <test-method signature="registerUser()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:14:20 EAT" name="registerUser" finished-at="2025-04-15T16:14:23 EAT" duration-ms="2700" status="PASS">
+        <test-method signature="registerUser()[pri:0, instance:com.commontests.RegisterUserTest@51c668e3]" started-at="2025-04-26T20:06:26 EAT" name="registerUser" finished-at="2025-04-26T20:06:27 EAT" duration-ms="1846" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:14:52 EAT" name="tearDown" finished-at="2025-04-15T16:14:52 EAT" duration-ms="580" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.RegisterUserTest@51c668e3]" started-at="2025-04-26T20:07:02 EAT" name="tearDown" finished-at="2025-04-26T20:07:03 EAT" duration-ms="984" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.RegisterUserTest@1ed6388a]" started-at="2025-04-15T16:15:25 EAT" name="getReport" finished-at="2025-04-15T16:15:29 EAT" duration-ms="4461" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.RegisterUserTest@51c668e3]" started-at="2025-04-26T20:08:07 EAT" name="getReport" finished-at="2025-04-26T20:08:10 EAT" duration-ms="3631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.RegisterUserTest -->
       <class name="com.commontests.CasinoGamesTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:11:39 EAT" name="setup" finished-at="2025-04-15T16:11:46 EAT" duration-ms="6368" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.CasinoGamesTest@25641d39]" started-at="2025-04-26T20:04:09 EAT" name="setup" finished-at="2025-04-26T20:04:11 EAT" duration-ms="2315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:11:46 EAT" name="login" finished-at="2025-04-15T16:11:57 EAT" depends-on-methods="com.commontests.CasinoGamesTest.setup" duration-ms="11489" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.CasinoGamesTest@25641d39]" started-at="2025-04-26T20:04:11 EAT" name="login" finished-at="2025-04-26T20:04:22 EAT" depends-on-methods="com.commontests.CasinoGamesTest.setup" duration-ms="10962" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="casinoTest()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:14:43 EAT" name="casinoTest" finished-at="2025-04-15T16:14:49 EAT" duration-ms="6451" status="PASS">
+        <test-method signature="casinoTest()[pri:0, instance:com.commontests.CasinoGamesTest@25641d39]" started-at="2025-04-26T20:06:44 EAT" name="casinoTest" finished-at="2025-04-26T20:06:53 EAT" duration-ms="9742" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- casinoTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:14:49 EAT" name="teardown" finished-at="2025-04-15T16:14:49 EAT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.commontests.CasinoGamesTest@25641d39]" started-at="2025-04-26T20:06:53 EAT" name="teardown" finished-at="2025-04-26T20:06:53 EAT" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.CasinoGamesTest@130c12b7]" started-at="2025-04-15T16:15:09 EAT" name="getReport" finished-at="2025-04-15T16:15:14 EAT" duration-ms="4929" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.CasinoGamesTest@25641d39]" started-at="2025-04-26T20:07:15 EAT" name="getReport" finished-at="2025-04-26T20:07:26 EAT" duration-ms="10583" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.CasinoGamesTest -->
       <class name="com.commontests.SelectMultipleSoccerbetsTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:12:54 EAT" name="setup" finished-at="2025-04-15T16:13:03 EAT" duration-ms="8849" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@2e6a8155]" started-at="2025-04-26T20:05:35 EAT" name="setup" finished-at="2025-04-26T20:05:44 EAT" duration-ms="8769" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:13:03 EAT" name="login" finished-at="2025-04-15T16:13:21 EAT" depends-on-methods="com.commontests.SelectMultipleSoccerbetsTest.setup" duration-ms="17254" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@2e6a8155]" started-at="2025-04-26T20:05:44 EAT" name="login" finished-at="2025-04-26T20:05:56 EAT" depends-on-methods="com.commontests.SelectMultipleSoccerbetsTest.setup" duration-ms="11564" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="TestSelectionOfMultipleSoccerGames()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:14:23 EAT" name="TestSelectionOfMultipleSoccerGames" finished-at="2025-04-15T16:14:28 EAT" duration-ms="5801" status="PASS">
+        <test-method signature="TestSelectionOfMultipleSoccerGames()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@2e6a8155]" started-at="2025-04-26T20:06:27 EAT" name="TestSelectionOfMultipleSoccerGames" finished-at="2025-04-26T20:06:34 EAT" duration-ms="6935" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestSelectionOfMultipleSoccerGames -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:14:52 EAT" name="tearDown" finished-at="2025-04-15T16:14:52 EAT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@2e6a8155]" started-at="2025-04-26T20:07:03 EAT" name="tearDown" finished-at="2025-04-26T20:07:03 EAT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@5a45133e]" started-at="2025-04-15T16:15:29 EAT" name="getReport" finished-at="2025-04-15T16:15:33 EAT" duration-ms="3203" status="PASS">
+        <test-method is-config="true" signature="getReport()[pri:0, instance:com.commontests.SelectMultipleSoccerbetsTest@2e6a8155]" started-at="2025-04-26T20:08:10 EAT" name="getReport" finished-at="2025-04-26T20:08:18 EAT" duration-ms="7264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReport -->
       </class> <!-- com.commontests.SelectMultipleSoccerbetsTest -->
       <class name="com.commontests.PlaceSingleSoccerBetTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:12:26 EAT" name="setup" finished-at="2025-04-15T16:12:31 EAT" duration-ms="5363" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@121314f7]" started-at="2025-04-26T20:04:59 EAT" name="setup" finished-at="2025-04-26T20:05:02 EAT" duration-ms="3312" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:12:31 EAT" name="login" finished-at="2025-04-15T16:12:44 EAT" depends-on-methods="com.commontests.PlaceSingleSoccerBetTest.setup" duration-ms="12943" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@121314f7]" started-at="2025-04-26T20:05:02 EAT" name="login" finished-at="2025-04-26T20:05:15 EAT" depends-on-methods="com.commontests.PlaceSingleSoccerBetTest.setup" duration-ms="12669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="placebet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:13:56 EAT" name="placebet" finished-at="2025-04-15T16:14:05 EAT" duration-ms="9507" status="PASS">
+        <test-method signature="placeSingleSoccerbet()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@121314f7]" started-at="2025-04-26T20:06:12 EAT" name="placeSingleSoccerbet" finished-at="2025-04-26T20:06:20 EAT" duration-ms="7549" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- placebet -->
-        <test-method signature="verifyMyBets()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:14:05 EAT" name="verifyMyBets" finished-at="2025-04-15T16:14:20 EAT" duration-ms="14477" status="PASS">
+        </test-method> <!-- placeSingleSoccerbet -->
+        <test-method signature="verifyMyBets()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@121314f7]" started-at="2025-04-26T20:06:20 EAT" name="verifyMyBets" finished-at="2025-04-26T20:06:26 EAT" duration-ms="5969" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMyBets -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:14:49 EAT" name="closeBrowser" finished-at="2025-04-15T16:14:52 EAT" duration-ms="2545" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@121314f7]" started-at="2025-04-26T20:07:02 EAT" name="closeBrowser" finished-at="2025-04-26T20:07:02 EAT" duration-ms="507" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@7db12bb6]" started-at="2025-04-15T16:15:20 EAT" name="tearDown" finished-at="2025-04-15T16:15:25 EAT" duration-ms="4446" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.commontests.PlaceSingleSoccerBetTest@121314f7]" started-at="2025-04-26T20:07:56 EAT" name="tearDown" finished-at="2025-04-26T20:08:07 EAT" duration-ms="10521" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

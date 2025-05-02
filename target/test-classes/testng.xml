@@ -47,6 +47,12 @@
                     <include name="selectSingleRandomBet"/>
                 </methods>
             </class>
+            <class name="com.commontests.CricketGamesTest">
+                <methods>
+                    <include name="selectMultipleCricketGames"/>
+                    <include name="printTeamsAndMarketOdds"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

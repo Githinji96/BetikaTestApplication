@@ -19,6 +19,8 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+
 
 @Listeners(com.ListenersPackage.Listeners.class)
 public class CricketGamesTest {
@@ -88,54 +90,62 @@ public class CricketGamesTest {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void selectMultipleCricketGames(){
-         cricketbtn.click();
+    public void selectMultipleCricketGames() {
+        try {
+            // Click the Cricket button
+            cricketbtn.click();
+            System.out.println("[INFO] Clicked on Cricket section.");
 
-// Iterate over all matches and randomly select an odd for each
-        for (WebElement team : teams) {
-            List<WebElement> odds = team.findElements(By.className("prebet-match__odd"));
+            // Iterate over all matches and randomly select an odd for each
+            Random random = new Random();
+            for (WebElement team : teams) {
+                List<WebElement> odds = team.findElements(By.className("prebet-match__odd"));
 
-            // Ensure there are odds available
-            if (!odds.isEmpty()) {
-                int randId = (int) Math.floor(Math.random() * odds.size());
-                js.executeScript("arguments[0].click()", odds.get(randId));
-
-                // Print selected odd (Home Win, Draw, or Away Win)
-                System.out.println("Selected odd index: " + randId);
+                if (!odds.isEmpty()) {
+                    int randomIndex = random.nextInt(odds.size());
+                    js.executeScript("arguments[0].click()", odds.get(randomIndex));
+                    System.out.println("[INFO] Selected odd at index: " + randomIndex);
+                } else {
+                    System.out.println("[WARN] No odds available for this match.");
+                }
             }
+
+            System.out.println("[INFO] Total matches selected: " + teams.size());
+
+            // Clear and enter amount
+            enterAmt.sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+            enterAmt.sendKeys("99");
+            System.out.println("[INFO] Entered bet amount: 99");
+
+            // Verify the betslip information
+            System.out.println("[INFO] Betslip Details: " + betslip.getText());
+
+            // Get and parse account balance
+            String balanceText = accountBalance.getText().replaceAll("[^\\d.]", "").trim();
+            double accBalance = Double.parseDouble(balanceText);
+            System.out.println("[INFO] Account Balance: " + accBalance);
+
+            // Place bet if balance is sufficient
+            if (accBalance >= 99) {
+                js.executeScript("arguments[0].click()", submit);
+                System.out.println("[INFO] Clicked Submit button.");
+
+                // Wait for success notification
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                        By.xpath("//div[contains(@class, 'notification') and contains(@class, 'show') and contains(@class, 'success')]//div[@class='title']")));
+
+                Assert.assertTrue(toast.getText().contains("Bet Placement Successful"), "[FAIL] Bet placement not successful!");
+                System.out.println("[PASS] Bet placed successfully!");
+            } else {
+                System.out.println("[WARN] Insufficient balance to place bet.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("[FAIL] Test failed due to exception: " + e.getMessage());
         }
-
-        System.out.println("Total matches selected: " + teams.size());
-
-
-        enterAmt.sendKeys(Keys.CONTROL + "a" + Keys.BACK_SPACE);
-        enterAmt.sendKeys("99");
-
-        //Verify the betslip informations
-        System.out.println("The betslip "+betslip.getText());
-
-        //get bet balance amount
-        String amnt=accountBalance.getText();
-        String amnt1 = amnt.replaceAll("KES", "");
-
-        // Parse the remaining string to a double value
-        double accBalance = Double.parseDouble(amnt1);
-        System.out.println("The account balance "+accBalance);
-
-        //place bet if the account balance amount is greater than 99.
-        if(accBalance>=99){
-            js.executeScript("arguments[0].click()", submit);
-            //notification-show success > title
-            WebElement toast = driver.findElement(
-                    By.xpath("//div[contains(@class, 'notification') and contains(@class, 'show') and contains(@class, 'success')]//div[@class='title']"));
-            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(toast));
-            Assert.assertTrue(toast.getText().contains("Bet Placement Successful"));
-        }
-        else{
-            System.out.println("Amount is less in the account to place a bet");
-        }
-
     }
+
     @Test
     public void printTeamsAndMarketOdds() throws InterruptedException {
         js.executeScript("arguments[0].click()",cricketbtn);
