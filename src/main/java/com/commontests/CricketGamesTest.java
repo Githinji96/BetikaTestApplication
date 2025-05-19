@@ -57,7 +57,6 @@ public class CricketGamesTest {
     WebElement submit;
 
 
-
     @BeforeTest
     public void setup() {
         try {

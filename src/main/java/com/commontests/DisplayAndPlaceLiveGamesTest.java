@@ -83,7 +83,7 @@ public class DisplayAndPlaceLiveGamesTest {
 
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
-    public void testlive() throws IOException {
+    public void testlivegames() throws IOException {
         loadProperty ld= new loadProperty();
         ld.loadProperties();
         this.liveurl = ld.liveUrl;

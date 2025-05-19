@@ -93,7 +93,7 @@ public class SelectMultipleSoccerbetsTest {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
 
     }
-   @Test(testName = "TestSelectionOfMultipleSoccerGames")//(retryAnalyzer = rerunFailedTestCases.class)
+   @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void TestSelectionOfMultipleSoccerGames() {
        List<WebElement> listItems = oddsContainer;
 

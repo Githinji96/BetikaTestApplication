@@ -19,7 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class DriverClass {
 
     public String browser;
-    public WebDriver driver;
+    public static WebDriver driver;
     public WebDriverWait wait;
     public JavascriptExecutor js;
 
@@ -56,7 +56,7 @@ public class DriverClass {
     public void customWait(WebDriver dr,Integer duration, WebElement element){
         new WebDriverWait(dr, Duration.ofSeconds(duration)).until(ExpectedConditions.visibilityOf(element));
     }
-    public String takeScreenshot( String fileName) {
+    public static String takeScreenshot(String fileName) {
         try {
             String baseDir = System.getProperty("user.dir");
             String screenshotDirPath = baseDir + File.separator + "screenshots";

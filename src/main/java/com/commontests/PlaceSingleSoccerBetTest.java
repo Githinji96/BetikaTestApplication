@@ -116,7 +116,7 @@ public class PlaceSingleSoccerBetTest {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
 
-    @Test(retryAnalyzer = rerunFailedTestCases.class)
+    @Test (retryAnalyzer = rerunFailedTestCases.class)
     public void placeSingleSoccerbet() {
 
         String actualTitle = driver.getTitle();

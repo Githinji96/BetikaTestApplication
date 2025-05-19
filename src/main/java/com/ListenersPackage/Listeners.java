@@ -2,25 +2,18 @@ package com.ListenersPackage;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
+
 import com.aventstack.extentreports.Status;
 import com.utils.ExtentReportManager;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.utils.DriverClass;
-import java.util.Date;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 
 
 public class Listeners implements ITestListener {
     private static final ExtentReports extent = ExtentReportManager.getReportInstance();
     private static final ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
-     // Instance of DriverClass
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -35,14 +28,17 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        extentTest.get().log(Status.FAIL, "Test Failed: " + result.getMethod().getMethodName());
-        extentTest.get().log(Status.FAIL, result.getThrowable().getMessage());
-
+        String testName = result.getMethod().getMethodName();
         ExtentTest test = extentTest.get();
-        test.log(Status.FAIL, "Test Failed: " + result.getMethod().getMethodName());
-        test.log(Status.FAIL, result.getThrowable().getMessage());
-//
 
+        test.log(Status.FAIL, "Test Failed: " + testName);
+        test.log(Status.FAIL, result.getThrowable().getMessage());
+
+        // Take screenshot using DriverClass
+        String screenshotPath = DriverClass.takeScreenshot(testName);
+        if (screenshotPath != null) {
+            test.addScreenCaptureFromPath(screenshotPath);
+        }
     }
 
     @Override
@@ -52,6 +48,6 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        extent.flush(); // Write report to file
+        extent.flush();
     }
 }

@@ -86,7 +86,7 @@ public class TableTennisTest {
         lg.login(URL, usernumber, password, new ArrayList<>(Arrays.asList(driver, js)));
     }
 
-    @Test(retryAnalyzer = rerunFailedTestCases.class)
+   @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void placeTableTennisMatches() {
         js.executeScript("arguments[0].click()",tennisbtn);
 

@@ -34,7 +34,7 @@
             </class>
             <class name="com.commontests.BoxingMatchesTest">
                 <methods>
-                    <include name="placetestBoxingMatches"/>
+                    <include name="placeBoxingMatches"/>
                 </methods>
             </class>
             <class name="com.commontests.CasinoGamesTest">
@@ -44,7 +44,7 @@
             </class>
             <class name="com.commontests.HandballGamesTest">
                 <methods>
-                    <include name="selectSingleRandomBet"/>
+                    <include name="selectSingleHandballRandomBet"/>
                 </methods>
             </class>
             <class name="com.commontests.CricketGamesTest">

@@ -15,98 +15,89 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Iterator;
 import java.util.List;
 
 @Listeners(com.ListenersPackage.Listeners.class)
 public class BrokenLinksTest {
 
-    public String betUrl;
-    String browser = "chrome";
-    WebDriver driver;
-    private DriverClass driverClass;
+    private WebDriver driver;
     private JavascriptExecutor js;
-
+    private DriverClass driverClass;
+    private String betUrl;
 
     @BeforeTest
-    public void setup() {
+    public void setupDriver() {
         try {
             System.out.println("Initializing WebDriver...");
             driverClass = new DriverClass("firefox");
-            driver = driverClass.getDriver();  // Ensure getDriver() method exists in DriverClass
-            js = (JavascriptExecutor) driver;
-            PageFactory.initElements(driver, this);
+            driver = driverClass.getDriver();
 
             if (driver == null) {
                 throw new RuntimeException("WebDriver is not initialized after DriverClass setup");
             }
+
+            js = (JavascriptExecutor) driver;
+            PageFactory.initElements(driver, this);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Failed to initialize WebDriver");
         }
     }
-    @BeforeTest(dependsOnMethods = "setup")
-    public void launchUrl() throws IOException {
-        loadProperty ld= new loadProperty();
-        ld.loadProperties();
-        this.betUrl=ld.betUrl;
+
+    @BeforeTest(dependsOnMethods = "setupDriver")
+    public void launchApplication() throws IOException {
+        loadProperty propertyLoader = new loadProperty();
+        propertyLoader.loadProperties();
+        betUrl = propertyLoader.betUrl;
         driver.get(betUrl);
-
-    }
-
-    @AfterTest
-    public void tearDown() {
-        driver.quit();
-        driver = null;
     }
 
     @Test(retryAnalyzer = rerunFailedTestCases.class)
     public void testBrokenLinks() {
+        List<WebElement> links = driver.findElements(By.tagName("a"));
 
-            String url = "";
-            HttpURLConnection huc = null;
-            int respCode = 200;
-            List<WebElement> links = driver.findElements(By.tagName("a"));
+        for (WebElement link : links) {
+            String url = link.getAttribute("href");
+            System.out.println(url);
 
-            Iterator<WebElement> it = links.iterator();
+            if (url == null || url.isEmpty()) {
+                System.out.println("URL is either not configured for anchor tag or it is empty");
+                continue;
+            }
 
-            while (it.hasNext()) {
+            if (!url.startsWith(betUrl)) {
+                System.out.println("URL belongs to another domain, skipping it.");
+                continue;
+            }
 
-                url = it.next().getAttribute("href");
-                System.out.println(url);
-                if (url == null || url.isEmpty()) {
-                    System.out.println("URL is either not configured for anchor tag or it is empty");
-                    continue;
-                }
+            try {
+                HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+                connection.setRequestMethod("HEAD");
+                connection.connect();
 
-                if (!url.startsWith(betUrl)) {
-                    System.out.println("URL belongs to another domain, skipping it.");
-                    continue;
-                }
-                try {
-                    huc = (HttpURLConnection) (new URL(url).openConnection());
-
-                    huc.setRequestMethod("HEAD");
-
-                    huc.connect();
-                    System.out.println(url + " is a valid link");
-
-                } catch (MalformedURLException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+                int responseCode = connection.getResponseCode();
+                System.out.println(url + " responded with code: " + responseCode);
+            } catch (MalformedURLException e) {
+                System.err.println("Malformed URL: " + url);
+                e.printStackTrace();
+            } catch (IOException e) {
+                System.err.println("IOException while connecting to URL: " + url);
+                e.printStackTrace();
             }
         }
-    @AfterSuite
-    public void getReport() {
-        // Save the Extent Report
-        ExtentReportManager.getReportInstance().flush();
+    }
 
-        // Convert the HTML report to PDF
+    @AfterTest
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
+
+    @AfterSuite
+    public void generateReport() {
+        ExtentReportManager.getReportInstance().flush();
         ExtentReportManager.convertHtmlToPdf();
     }
-    }
-
+}
